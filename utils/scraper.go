@@ -3,16 +3,25 @@ package utils
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 	log "github.com/sirupsen/logrus"
 )
 
 func Parse() {
+	var parent = ""
+	var currentparent = &parent
 	document := ParseAndGetDocument("https://openqa.suse.de")
 	fmt.Println("Inside Parse", document)
-	document.Find("a.dropdown-item.dropdown-toggle").Each(func(i int, s *goquery.Selection) {
-		fmt.Println(s.Text())
+	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
+		href, _ := s.Attr("href")
+		if strings.Contains(href, "parent") {
+			*currentparent = s.Text()
+			fmt.Println("=================\n", s.Text(), "\n --------------")
+		} else {
+			fmt.Println(s.Text(), "with current parent: ", parent, "\n --------------")
+		}
 	})
 }
 
