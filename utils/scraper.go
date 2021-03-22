@@ -11,7 +11,7 @@ import (
 func Parse() {
 	document := ParseAndGetDocument("https://openqa.suse.de")
 	fmt.Println("Inside Parse", document)
-	document.Find("a.nav-link").Each(func(i int, s *goquery.Selection) {
+	document.Find("a.dropdown-item.dropdown-toggle").Each(func(i int, s *goquery.Selection) {
 		fmt.Println(s.Text())
 	})
 }
