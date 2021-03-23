@@ -6,4 +6,7 @@ import (
 
 func main() {
 	utils.Parse()
+	utils.ParseBuilds()
+	utils.ParseJobs()
+	utils.ParseModules()
 }
