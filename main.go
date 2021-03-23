@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	// utils.Parse()
-	// utils.ParseBuilds()
-	// utils.ParseJobs()
-	utils.ParseModules()
+	//utils.Parse()
+	utils.ParseBuilds()
+	utils.ParseJobs()
+	//utils.ParseModules()
 }
