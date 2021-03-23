@@ -39,6 +39,24 @@ func ParseBuilds() {
 
 func ParseJobs() {
 	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
+	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
+		rows.Find("td").Each(func(i int, s *goquery.Selection) {
+			job_name, exists := s.Attr("data-title")
+
+			if exists {
+				fmt.Println(job_name)
+			} else {
+				name, _ := s.Attr("name")
+				fmt.Printf(name)
+			}
+			fmt.Printf("|")
+		})
+		fmt.Printf("\n")
+	})
+}
+
+func xParseJobs() {
+	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
 	fmt.Println("Inside Parse", document)
 	document.Find("td").Each(func(i int, s *goquery.Selection) {
 		job_name := strings.TrimSpace(s.Text())
