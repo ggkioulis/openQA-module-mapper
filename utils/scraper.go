@@ -29,13 +29,11 @@ func ParseBuilds() {
 	document := ParseAndGetDocument("https://openqa.suse.de/group_overview/110")
 	fmt.Println("Inside Builds", document)
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
-	//href, _ := s.Attr("href")
-	str1 := s.Text()
-	strTrim := strings.TrimSpace(str1)
-	fmt.Println("==>" + strTrim + "<==")
-	res1 := strings.Split(strTrim, "(")
-	fmt.Println("To split einai: ", res1[0])
-	//fmt.Println("value: ", href, "to text einai: ", s.Text())
+	str := s.Text()
+	res := strings.Split(str, "(")
+	respace := res[0]
+	build_latest := strings.TrimSpace(respace)
+	fmt.Println("The last build is: ", build_latest)
 }
 
 func ParseJobs() {
