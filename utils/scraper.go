@@ -2,11 +2,11 @@ package utils
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	log "github.com/sirupsen/logrus"
 )
 
 const webui_url = "https://openqa.suse.de"
@@ -47,11 +47,15 @@ func ParseJobs() {
 }
 
 func ParseModules() {
-	document := ParseAndGetDocument("https://openqa.opensuse.org/tests/1677136")
-	fmt.Println("Inside document", document)
-	document.Find("td.component").Each(func(i int, s *goquery.Selection) {
-		fmt.Println("ta modules einai:", s.Text())
-	})
+	url := "https://openqa.suse.de/tests/5701825"
+	autoinst_log := url + "/file/autoinst-log.txt"
+	resp, err := http.Get(autoinst_log)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+	fmt.Println(resp.Body)
+
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
@@ -65,7 +69,7 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 	// Create a goquery document from the HTTP response
 	document, err := goquery.NewDocumentFromReader(response.Body)
 	if err != nil {
-		log.Errorf("Error loading HTTP response body (%v)", err)
+		log.Fatal(err)
 		return nil
 	}
 
