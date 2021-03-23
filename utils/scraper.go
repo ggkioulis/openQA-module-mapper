@@ -39,8 +39,9 @@ func ParseBuilds() {
 func ParseJobs() {
 	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
 	fmt.Println("Inside Parse", document)
-	document.Find("a").Each(func(i int, s *goquery.Selection) {
-		fmt.Println(s.Text())
+	document.Find("td.name").Each(func(i int, s *goquery.Selection) {
+		job_name := strings.TrimSpace(s.Text())
+		fmt.Println(job_name)
 	})
 }
 
