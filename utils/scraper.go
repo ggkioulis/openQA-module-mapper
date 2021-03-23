@@ -9,9 +9,10 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+const webui_url = "https://openqa.suse.de"
+
 func Parse() {
 	var parent string
-	webui_url := "https://openqa.suse.de"
 	document := ParseAndGetDocument(webui_url)
 	fmt.Println("Inside Parse", document)
 	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
@@ -27,13 +28,13 @@ func Parse() {
 
 func ParseBuilds() {
 	document := ParseAndGetDocument("https://openqa.suse.de/group_overview/110")
-	fmt.Println("Inside Builds", document)
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
-	str := s.Text()
-	res := strings.Split(str, "(")
-	respace := res[0]
-	build_latest := strings.TrimSpace(respace)
-	fmt.Println("The last build is: ", build_latest)
+	s.Find("a").Each(func(k int, slc *goquery.Selection) {
+		buildNumber := strings.TrimSpace(slc.Text())
+		href, _ := slc.Attr("href")
+		link := webui_url + href
+		fmt.Println("build:", buildNumber, "/link:", link)
+	})
 }
 
 func ParseJobs() {
