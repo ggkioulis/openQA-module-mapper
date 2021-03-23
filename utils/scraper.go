@@ -10,17 +10,17 @@ import (
 )
 
 func Parse() {
-	var parent = ""
-	var currentparent = &parent
-	document := ParseAndGetDocument("https://openqa.suse.de")
+	var parent string
+	webui_url := "https://openqa.suse.de"
+	document := ParseAndGetDocument(webui_url)
 	fmt.Println("Inside Parse", document)
 	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
 		href, _ := s.Attr("href")
 		if strings.Contains(href, "parent") {
-			*currentparent = s.Text()
-			fmt.Println("=================\n", s.Text(), "\n --------------")
+			parent = s.Text()
 		} else {
-			fmt.Println(s.Text(), "with current parent: ", parent, "\n --------------")
+			build_url := webui_url + href
+			fmt.Println(webui_url, " > Job Groups > ", parent, " > ", s.Text(), "\nlink to Builds: ", build_url, "\n---")
 		}
 	})
 }
