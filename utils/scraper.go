@@ -50,8 +50,23 @@ func ParseJobs() {
 		rows.Find("td").Each(func(i int, s *goquery.Selection) {
 			str, status := s.Attr("name")
 			if status == true {
-				res := strings.Split(str, "_")
-				fmt.Println("to res einai", res[2])
+				job_id := strings.Split(str, "_")
+				title, status1 := s.Find("i").Attr("title")
+				if status1 == true {
+					state := strings.Split(title, ":")
+					if state[0] == "Done" {
+						result := strings.TrimSpace(state[1])
+						fmt.Println("The job", job_id[2], "is", state[0], "with result", result)
+						if result == "failed" {
+							rows.Find("a.failedmodule").Each(func(i int, m *goquery.Selection) {
+								module, _ := m.Find("span").Attr("title")
+								fmt.Println("To failed module einai:", module)
+							})
+						}
+					} else {
+						fmt.Println("The job", job_id[2], "is", state[0])
+					}
+				}
 			}
 		})
 	})
