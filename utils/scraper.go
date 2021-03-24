@@ -42,30 +42,39 @@ func ParseJobs() {
 	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
 		rows.Find("a").First().Each(func(i int, s *goquery.Selection) {
+			// JOB NAME
 			name, status := s.Attr("data-title")
 			if status == true {
 				fmt.Println(name)
 			}
 		})
-		rows.Find("td").Each(func(i int, s *goquery.Selection) {
-			str, status := s.Attr("name")
+		rows.Find("td").Each(func(i int, cell *goquery.Selection) {
+			str, status := cell.Attr("name")
 			if status == true {
+				// We are inside the specific job's cell
+				var result string
+				var failed_modules []string
+
+				// JOB ID
 				job_id := strings.Split(str, "_")
-				title, status1 := s.Find("i").Attr("title")
+				title, status1 := cell.Find("i").Attr("title")
 				if status1 == true {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
-						result := strings.TrimSpace(state[1])
+						// RESULT
+						result = strings.TrimSpace(state[1])
 						fmt.Println("The job", job_id[2], "is", state[0], "with result", result)
-						if result == "failed" {
-							rows.Find("a.failedmodule").Each(func(i int, m *goquery.Selection) {
-								module, _ := m.Find("span").Attr("title")
-								fmt.Println("To failed module einai:", module)
-							})
-						}
 					} else {
 						fmt.Println("The job", job_id[2], "is", state[0])
 					}
+				}
+				if result == "failed" {
+					cell.Find("a.failedmodule").Each(func(i int, m *goquery.Selection) {
+						module, _ := m.Find("span").Attr("title")
+						// FAILED MODULES
+						failed_modules = append(failed_modules, module)
+						fmt.Printf("To job %s exei ta eksis failed modules %s \n", job_id[2], module)
+					})
 				}
 			}
 		})
