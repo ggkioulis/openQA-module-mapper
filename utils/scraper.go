@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"strings"
@@ -64,8 +65,15 @@ func ParseModules() {
 		log.Fatal(err)
 	}
 	defer resp.Body.Close()
-	fmt.Println(resp.Body)
 
+	if resp.StatusCode == http.StatusOK {
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			log.Fatal(err)
+		}
+		bodyString := string(bodyBytes)
+		fmt.Println(bodyString)
+	}
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
