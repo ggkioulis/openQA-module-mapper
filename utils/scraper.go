@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -89,6 +90,8 @@ func ParseJobs() {
 }
 
 func ParseModules() {
+	var modules []string
+
 	url := "https://openqa.suse.de/tests/5701825"
 	autoinst_log := url + "/file/autoinst-log.txt"
 	resp, err := http.Get(autoinst_log)
@@ -103,7 +106,23 @@ func ParseModules() {
 			log.Fatal(err)
 		}
 		bodyString := string(bodyBytes)
-		fmt.Println(bodyString)
+		// fmt.Println(bodyString)
+
+		reached_scheduling := false
+		scanner := bufio.NewScanner(strings.NewReader(bodyString))
+		for scanner.Scan() {
+			line := scanner.Text()
+
+			if strings.Contains(line, "[debug] scheduling") {
+				reached_scheduling = true
+				testline := strings.Split(line, " ")
+				modules = append(modules, strings.Split(testline[len(testline)-1], "tests/")[1])
+			} else if reached_scheduling {
+				// if there are no more scheduling lines, break
+				break
+			}
+		}
+		fmt.Println(modules)
 	}
 }
 
