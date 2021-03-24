@@ -69,11 +69,18 @@ func ParseJobs() {
 					}
 				}
 				if result == "failed" {
-					cell.Find("a.failedmodule").Each(func(i int, m *goquery.Selection) {
-						module, _ := m.Find("span").Attr("title")
-						// FAILED MODULES
-						failed_modules = append(failed_modules, module)
-						fmt.Printf("To job %s exei ta eksis failed modules %s \n", job_id[2], module)
+					cell.Find("span").Each(func(i int, n *goquery.Selection) {
+						failing_module_multiline, exists := n.Attr("title")
+						if exists == true {
+							failing_module_string := strings.ReplaceAll(failing_module_multiline, "\n", "")
+							modules := strings.Split(failing_module_string, "- ")
+							if len(modules) > 1 {
+								modules = modules[1:]
+							}
+							// FAILED MODULES
+							failed_modules = append(failed_modules, modules...)
+							fmt.Printf("To job %s exei ta eksis extra failed modules %s \n", job_id[2], failed_modules)
+						}
 					})
 				}
 			}
