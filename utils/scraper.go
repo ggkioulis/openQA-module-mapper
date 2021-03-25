@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
@@ -15,6 +16,11 @@ import (
 )
 
 const separator = " > "
+
+// var jobGroupBarrier sync.WaitGroup
+
+var jobBarrier sync.WaitGroup
+var jobChan chan bool
 
 type Webui struct {
 	Name string
@@ -25,18 +31,31 @@ func (webui *Webui) Scrape() {
 	defer TimeTrack(time.Now(), webui.Name)
 	jobGroups := webui.ParseJobGroups()
 
-	for _, jobGroup := range jobGroups {
-		build := webui.ParseBuilds(jobGroup)
-		jobs := webui.ParseJobs(build)
+	// number of jobs being parsed in parallel
+	jobChan = make(chan bool, 32)
 
-		for _, job := range jobs {
-			//modules := webui.ParseModules(job.Url)
-			webui.ParseModules(job.Url)
-			fmt.Println("Got modules for", job.Path, "url:", job.Url)
-			fmt.Println("Part of", build)
-			fmt.Println("------------")
-		}
+	for _, jobGroup := range jobGroups {
+		jobBarrier.Add(1)
+		webui.ParallelizeJobs(jobGroup)
 	}
+	jobBarrier.Wait()
+}
+
+func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
+	defer jobBarrier.Done()
+	jobChan <- true
+
+	build := webui.ParseBuilds(jobGroup)
+	jobs := webui.ParseJobs(build)
+
+	for _, job := range jobs {
+		jobBarrier.Add(1)
+		//modules := webui.ParseModules(job.Url)
+		go webui.ParseModules(job.Url, job.Path)
+	}
+
+	<-jobChan
+	// jobBarrier.Wait()
 }
 
 func (webui *Webui) ParseJobGroups() []data.JobGroup {
@@ -85,13 +104,6 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 	document := ParseAndGetDocument(build.Url)
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
-		var jobName string
-		rows.Find("a").First().Each(func(i int, s *goquery.Selection) {
-			name, status := s.Attr("data-title")
-			if status == true {
-				jobName = name
-			}
-		})
 		rows.Find("td").Each(func(i int, cell *goquery.Selection) {
 			description, status := cell.Attr("name")
 			if status == true {
@@ -124,7 +136,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								})
 							}
 
-							arch, err := getArchFromJson(jobId)
+							arch, jobName, err := getArchFromJson(jobId)
 							if err != nil {
 								log.Fatal(err)
 							}
@@ -148,7 +160,9 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	return jobs
 }
 
-func getArchFromJson(job_id string) (string, error) {
+// TODO Do not parse for TEST_SUITE_NAME, the only point is to get
+// <span title="create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15">create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15</span>
+func getArchFromJson(job_id string) (string, string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
@@ -165,19 +179,26 @@ func getArchFromJson(job_id string) (string, error) {
 		bodyString := string(bodyBytes)
 
 		scanner := bufio.NewScanner(strings.NewReader(bodyString))
+		var arch string
 		for scanner.Scan() {
 			line := scanner.Text()
 
 			if strings.Contains(line, `"ARCH" :`) {
-				arch := strings.Split(line, `"`)[3]
-				return arch, nil
+				arch = strings.Split(line, `"`)[3]
+			}
+			if strings.Contains(line, `"TEST_SUITE_NAME" :`) {
+				testName := strings.Split(line, `"`)[3]
+				return arch, testName, nil
 			}
 		}
 	}
-	return "", fmt.Errorf("could not parse json file")
+	return "", "", fmt.Errorf("could not parse json file")
 }
 
-func (webui *Webui) ParseModules(url string) []string {
+func (webui *Webui) ParseModules(url string, path string) []string {
+	defer jobBarrier.Done()
+	jobChan <- true
+
 	var modules []string
 
 	autoinst_log := url + "/file/autoinst-log.txt"
@@ -209,6 +230,9 @@ func (webui *Webui) ParseModules(url string) []string {
 			}
 		}
 	}
+	fmt.Println("Parsed job:", url, "|with path:", path)
+
+	<-jobChan
 	return modules
 }
 
