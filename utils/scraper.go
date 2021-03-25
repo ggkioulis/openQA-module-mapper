@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/PuerkitoBio/goquery"
 )
@@ -39,6 +40,7 @@ type Job struct {
 }
 
 func (webui *Webui) Scrape() {
+	defer utils.TimeTrack(time.Now(), "openqa scraper")
 	jobGroups := webui.ParseJobGroups()
 
 	for _, jobGroup := range jobGroups {
@@ -46,11 +48,10 @@ func (webui *Webui) Scrape() {
 		jobs := webui.ParseJobs(build)
 
 		for _, job := range jobs {
-			modules := webui.ParseModules(job.Url)
-			fmt.Println(modules)
-			break
+			//modules := webui.ParseModules(job.Url)
+			webui.ParseModules(job.Url)
+			fmt.Println("Got modules for", job.Path)
 		}
-		break
 	}
 }
 
