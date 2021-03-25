@@ -32,10 +32,10 @@ func (webui *Webui) Scrape() {
 		for _, job := range jobs {
 			//modules := webui.ParseModules(job.Url)
 			webui.ParseModules(job.Url)
-			fmt.Println("Got modules for", job.Path)
-			break
+			fmt.Println("Got modules for", job.Path, "url:", job.Url)
+			fmt.Println("Part of", build)
+			fmt.Println("------------")
 		}
-		break
 	}
 }
 
@@ -83,7 +83,7 @@ func (webui *Webui) ParseBuilds(jobGroup data.JobGroup) data.Build {
 func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	var jobs []data.Job
 
-	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
+	document := ParseAndGetDocument(build.Url)
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
 		var jobName string
 		rows.Find("a").First().Each(func(i int, s *goquery.Selection) {
