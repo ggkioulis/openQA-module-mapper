@@ -10,37 +10,19 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
+
+	"github.com/ggkioulis/openQA-module-mapper/data"
 )
 
 const separator = " > "
 
-// TODO add in data module
 type Webui struct {
 	Name string
 	Url  string
 }
 
-type JobGroup struct {
-	Path string
-	Url  string
-}
-
-type Build struct {
-	Path string
-	Url  string
-}
-
-type Job struct {
-	Path          string
-	Url           string
-	Name          string
-	ID            string
-	result        string
-	failedModules []string
-}
-
 func (webui *Webui) Scrape() {
-	defer utils.TimeTrack(time.Now(), "openqa scraper")
+	defer TimeTrack(time.Now(), webui.Name)
 	jobGroups := webui.ParseJobGroups()
 
 	for _, jobGroup := range jobGroups {
@@ -51,14 +33,16 @@ func (webui *Webui) Scrape() {
 			//modules := webui.ParseModules(job.Url)
 			webui.ParseModules(job.Url)
 			fmt.Println("Got modules for", job.Path)
+			break
 		}
+		break
 	}
 }
 
-func (webui *Webui) ParseJobGroups() []JobGroup {
+func (webui *Webui) ParseJobGroups() []data.JobGroup {
 	var parent string
 	pathPrefix := webui.Name + separator + "Job Groups"
-	var jobGroups []JobGroup
+	var jobGroups []data.JobGroup
 
 	document := ParseAndGetDocument(webui.Url)
 	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
@@ -68,7 +52,7 @@ func (webui *Webui) ParseJobGroups() []JobGroup {
 		} else {
 			// We found a job group, append it to the end of the path
 			path := pathPrefix + separator + parent + separator + s.Text()
-			jobGroup := JobGroup{
+			jobGroup := data.JobGroup{
 				Path: path,
 				Url:  webui.Url + href,
 			}
@@ -80,15 +64,15 @@ func (webui *Webui) ParseJobGroups() []JobGroup {
 	return jobGroups
 }
 
-func (webui *Webui) ParseBuilds(jobGroup JobGroup) Build {
+func (webui *Webui) ParseBuilds(jobGroup data.JobGroup) data.Build {
 	document := ParseAndGetDocument(jobGroup.Url)
-	var build Build
+	var build data.Build
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
 	s.Find("a").Each(func(k int, slc *goquery.Selection) {
 		// We found a build, append the build number to the end of the path
 		path := jobGroup.Path + separator + strings.TrimSpace(slc.Text())
 		href, _ := slc.Attr("href")
-		build = Build{
+		build = data.Build{
 			Path: path,
 			Url:  webui.Url + href,
 		}
@@ -96,8 +80,8 @@ func (webui *Webui) ParseBuilds(jobGroup JobGroup) Build {
 	return build
 }
 
-func (webui *Webui) ParseJobs(build Build) []Job {
-	var jobs []Job
+func (webui *Webui) ParseJobs(build data.Build) []data.Job {
+	var jobs []data.Job
 
 	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
@@ -145,13 +129,13 @@ func (webui *Webui) ParseJobs(build Build) []Job {
 								log.Fatal(err)
 							}
 
-							job := Job{
+							job := data.Job{
 								Path:          build.Path + separator + jobName + separator + arch,
 								Url:           webui.Url + "/tests/" + jobId,
 								Name:          jobName,
 								ID:            jobId,
-								result:        result,
-								failedModules: failedModules,
+								Result:        result,
+								FailedModules: failedModules,
 							}
 
 							jobs = append(jobs, job)
