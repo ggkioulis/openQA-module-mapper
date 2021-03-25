@@ -89,6 +89,35 @@ func ParseJobs() {
 	})
 }
 
+func ParseJson(job_id string) string {
+	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
+	resp, err := http.Get(vars_json)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode == http.StatusOK {
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		bodyString := string(bodyBytes)
+
+		scanner := bufio.NewScanner(strings.NewReader(bodyString))
+		for scanner.Scan() {
+			line := scanner.Text()
+
+			if strings.Contains(line, `"ARCH" :`) {
+				fmt.Println(scanner.Text())
+				break
+			}
+		}
+	}
+	return "geiaaaaaaaaa"
+}
+
 func ParseModules() {
 	var modules []string
 

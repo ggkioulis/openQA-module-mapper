@@ -7,6 +7,7 @@ import (
 func main() {
 	//utils.Parse()
 	// utils.ParseBuilds()
-	// utils.ParseJobs()
-	utils.ParseModules()
+	//utils.ParseJobs()
+	//utils.ParseModules()
+	utils.ParseJson("5700456")
 }
