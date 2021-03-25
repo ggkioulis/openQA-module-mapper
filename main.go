@@ -5,9 +5,14 @@ import (
 )
 
 func main() {
-	//utils.Parse()
+	osd := utils.Webui{
+		Name: "OSD",
+		Url:  "https://openqa.suse.de",
+	}
+
+	osd.Scrape()
 	// utils.ParseBuilds()
 	//utils.ParseJobs()
 	//utils.ParseModules()
-	utils.ParseJson("5700456")
+	// utils.ParseJson("5700456")
 }

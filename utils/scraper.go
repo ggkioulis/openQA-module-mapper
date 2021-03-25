@@ -11,85 +11,172 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-const webui_url = "https://openqa.suse.de"
+const separator = " > "
 
-func Parse() {
+// TODO add in data module
+type Webui struct {
+	Name string
+	Url  string
+}
+
+type JobGroup struct {
+	Path string
+	Url  string
+}
+
+type Build struct {
+	Path string
+	Url  string
+}
+
+type Job struct {
+	Path          string
+	Url           string
+	Name          string
+	ID            string
+	result        string
+	failedModules []string
+}
+
+func (webui *Webui) Scrape() {
+	jobGroups := webui.ParseJobGroups()
+
+	for _, jobGroup := range jobGroups {
+		fmt.Println(jobGroup.Path, " with url: ", jobGroup.Url)
+		webui.CallBuilds(jobGroup)
+		break
+	}
+}
+
+func (webui *Webui) ParseJobGroups() []JobGroup {
 	var parent string
-	document := ParseAndGetDocument(webui_url)
-	fmt.Println("Inside Parse", document)
+	pathPrefix := webui.Name + separator + "Job Groups"
+	var jobGroups []JobGroup
+
+	document := ParseAndGetDocument(webui.Url)
 	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
 		href, _ := s.Attr("href")
 		if strings.Contains(href, "parent") {
 			parent = s.Text()
 		} else {
-			build_url := webui_url + href
-			fmt.Println(webui_url, " > Job Groups > ", parent, " > ", s.Text(), "\nlink to Builds: ", build_url, "\n---")
+			// We found a job group, append it to the end of the path
+			path := pathPrefix + separator + parent + separator + s.Text()
+			jobGroup := JobGroup{
+				Path: path,
+				Url:  webui.Url + href,
+			}
+
+			jobGroups = append(jobGroups, jobGroup)
 		}
 	})
+
+	return jobGroups
 }
 
-func ParseBuilds() {
-	document := ParseAndGetDocument("https://openqa.suse.de/group_overview/110")
+// TODO no need to parallelize, builds is only one item
+func (webui *Webui) CallBuilds(jobGroup JobGroup) {
+	builds := webui.ParseBuilds(jobGroup)
+
+	for _, build := range builds {
+		fmt.Println(build)
+		webui.CallJobs(build)
+	}
+}
+
+func (webui *Webui) ParseBuilds(jobGroup JobGroup) []Build {
+	document := ParseAndGetDocument(jobGroup.Url)
+	var builds []Build
+
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
 	s.Find("a").Each(func(k int, slc *goquery.Selection) {
-		buildNumber := strings.TrimSpace(slc.Text())
+		// We found a build, append the build number to the end of the path
+		path := jobGroup.Path + separator + strings.TrimSpace(slc.Text())
 		href, _ := slc.Attr("href")
-		link := webui_url + href
-		fmt.Println("build:", buildNumber, "/link:", link)
+		build := Build{
+			Path: path,
+			Url:  webui.Url + href,
+		}
+
+		builds = append(builds, build)
 	})
+
+	return builds
 }
 
-func ParseJobs() {
+func (webui *Webui) CallJobs(build Build) {
+	webui.ParseJobs(build)
+}
+
+func (webui *Webui) ParseJobs(build Build) []Job {
+	var jobs []Job
+
 	document := ParseAndGetDocument("https://openqa.suse.de/tests/overview?distri=sle&version=15-SP3&build=163.1&groupid=110")
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
+		var jobName string
 		rows.Find("a").First().Each(func(i int, s *goquery.Selection) {
-			// JOB NAME
 			name, status := s.Attr("data-title")
 			if status == true {
-				fmt.Println(name)
+				jobName = name
+				fmt.Println(jobName)
 			}
 		})
 		rows.Find("td").Each(func(i int, cell *goquery.Selection) {
-			str, status := cell.Attr("name")
+			description, status := cell.Attr("name")
 			if status == true {
 				// We are inside the specific job's cell
+				var jobId string
 				var result string
-				var failed_modules []string
+				var failedModules []string
 
-				// JOB ID
-				job_id := strings.Split(str, "_")
-				title, status1 := cell.Find("i").Attr("title")
-				if status1 == true {
+				job_description_slice := strings.Split(description, "_")
+				title, exists := cell.Find("i").Attr("title")
+				if exists == true {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
-						// RESULT
 						result = strings.TrimSpace(state[1])
-						fmt.Println("The job", job_id[2], "is", state[0], "with result", result)
-					} else {
-						fmt.Println("The job", job_id[2], "is", state[0])
-					}
-				}
-				if result == "failed" {
-					cell.Find("span").Each(func(i int, n *goquery.Selection) {
-						failing_module_multiline, exists := n.Attr("title")
-						if exists == true {
-							failing_module_string := strings.ReplaceAll(failing_module_multiline, "\n", "")
-							modules := strings.Split(failing_module_string, "- ")
-							if len(modules) > 1 {
-								modules = modules[1:]
+						if result != "skipped" {
+							// If job is Done and Not Skipped, get the job data
+							jobId = job_description_slice[2]
+
+							if result == "failed" {
+								cell.Find("span").Each(func(i int, n *goquery.Selection) {
+									failing_module_multiline, exists := n.Attr("title")
+									if exists == true {
+										failing_module_string := strings.ReplaceAll(failing_module_multiline, "\n", "")
+										modules := strings.Split(failing_module_string, "- ")
+										if len(modules) > 1 {
+											modules = modules[1:]
+										}
+										failedModules = append(failedModules, modules...)
+									}
+								})
 							}
-							// FAILED MODULES
-							failed_modules = append(failed_modules, modules...)
-							fmt.Printf("To job %s exei ta eksis extra failed modules %s \n", job_id[2], failed_modules)
+
+							arch, err := getArchFromJson(jobId)
+							if err != nil {
+								log.Fatal(err)
+							}
+
+							job := Job{
+								Path:          build.Path + separator + jobName + separator + arch,
+								Url:           webui.Url + "/tests/" + jobId,
+								Name:          jobName,
+								ID:            jobId,
+								result:        result,
+								failedModules: failedModules,
+							}
+
+							fmt.Println(job)
 						}
-					})
+					}
 				}
 			}
 		})
 	})
+	return jobs
 }
 
-func ParseJson(job_id string) string {
+func getArchFromJson(job_id string) (string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
@@ -110,12 +197,12 @@ func ParseJson(job_id string) string {
 			line := scanner.Text()
 
 			if strings.Contains(line, `"ARCH" :`) {
-				fmt.Println(scanner.Text())
-				break
+				arch := strings.Split(line, ":")[1]
+				return arch, nil
 			}
 		}
 	}
-	return "geiaaaaaaaaa"
+	return "", fmt.Errorf("could not parse json file")
 }
 
 func ParseModules() {
