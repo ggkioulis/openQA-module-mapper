@@ -42,8 +42,14 @@ func (webui *Webui) Scrape() {
 	jobGroups := webui.ParseJobGroups()
 
 	for _, jobGroup := range jobGroups {
-		fmt.Println(jobGroup.Path, " with url: ", jobGroup.Url)
-		webui.CallBuilds(jobGroup)
+		build := webui.ParseBuilds(jobGroup)
+		jobs := webui.ParseJobs(build)
+
+		for _, job := range jobs {
+			modules := webui.ParseModules(job.Url)
+			fmt.Println(modules)
+			break
+		}
 		break
 	}
 }
@@ -73,38 +79,20 @@ func (webui *Webui) ParseJobGroups() []JobGroup {
 	return jobGroups
 }
 
-// TODO no need to parallelize, builds is only one item
-func (webui *Webui) CallBuilds(jobGroup JobGroup) {
-	builds := webui.ParseBuilds(jobGroup)
-
-	for _, build := range builds {
-		fmt.Println(build)
-		webui.CallJobs(build)
-	}
-}
-
-func (webui *Webui) ParseBuilds(jobGroup JobGroup) []Build {
+func (webui *Webui) ParseBuilds(jobGroup JobGroup) Build {
 	document := ParseAndGetDocument(jobGroup.Url)
-	var builds []Build
-
+	var build Build
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
 	s.Find("a").Each(func(k int, slc *goquery.Selection) {
 		// We found a build, append the build number to the end of the path
 		path := jobGroup.Path + separator + strings.TrimSpace(slc.Text())
 		href, _ := slc.Attr("href")
-		build := Build{
+		build = Build{
 			Path: path,
 			Url:  webui.Url + href,
 		}
-
-		builds = append(builds, build)
 	})
-
-	return builds
-}
-
-func (webui *Webui) CallJobs(build Build) {
-	webui.ParseJobs(build)
+	return build
 }
 
 func (webui *Webui) ParseJobs(build Build) []Job {
@@ -117,7 +105,6 @@ func (webui *Webui) ParseJobs(build Build) []Job {
 			name, status := s.Attr("data-title")
 			if status == true {
 				jobName = name
-				fmt.Println(jobName)
 			}
 		})
 		rows.Find("td").Each(func(i int, cell *goquery.Selection) {
@@ -166,7 +153,7 @@ func (webui *Webui) ParseJobs(build Build) []Job {
 								failedModules: failedModules,
 							}
 
-							fmt.Println(job)
+							jobs = append(jobs, job)
 						}
 					}
 				}
@@ -197,7 +184,7 @@ func getArchFromJson(job_id string) (string, error) {
 			line := scanner.Text()
 
 			if strings.Contains(line, `"ARCH" :`) {
-				arch := strings.Split(line, ":")[1]
+				arch := strings.Split(line, `"`)[3]
 				return arch, nil
 			}
 		}
@@ -205,10 +192,9 @@ func getArchFromJson(job_id string) (string, error) {
 	return "", fmt.Errorf("could not parse json file")
 }
 
-func ParseModules() {
+func (webui *Webui) ParseModules(url string) []string {
 	var modules []string
 
-	url := "https://openqa.suse.de/tests/5701825"
 	autoinst_log := url + "/file/autoinst-log.txt"
 	resp, err := http.Get(autoinst_log)
 	if err != nil {
@@ -222,7 +208,6 @@ func ParseModules() {
 			log.Fatal(err)
 		}
 		bodyString := string(bodyBytes)
-		// fmt.Println(bodyString)
 
 		reached_scheduling := false
 		scanner := bufio.NewScanner(strings.NewReader(bodyString))
@@ -238,8 +223,8 @@ func ParseModules() {
 				break
 			}
 		}
-		fmt.Println(modules)
 	}
+	return modules
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
