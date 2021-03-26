@@ -145,7 +145,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 							arch, err := getArchFromJson(jobId)
 							if err != nil {
-								log.Fatal(err)
+								log.Fatal("Error getting Arch from Json for", jobId, err)
 							}
 
 							job := data.Job{
@@ -167,20 +167,18 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	return jobs
 }
 
-// TODO Do not parse for TEST_SUITE_NAME, the only point is to get
-// <span title="create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15">create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15</span>
 func getArchFromJson(job_id string) (string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Unable to get vars.json for job", job_id, err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("Unable to read json for job", job_id, err)
 		}
 
 		bodyString := string(bodyBytes)
@@ -208,14 +206,14 @@ func (webui *Webui) ParseModules(url string, path string) []string {
 	autoinst_log := url + "/file/autoinst-log.txt"
 	resp, err := http.Get(autoinst_log)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Unable to get autoinst-log.txt from", url, err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("Unabe to read autoinst-log.txt from", url, err)
 		}
 		bodyString := string(bodyBytes)
 
@@ -244,14 +242,14 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 	// Make HTTP request
 	response, err := http.Get(uri)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Unable to get document from", uri, err)
 	}
 	defer response.Body.Close()
 
 	// Create a goquery document from the HTTP response
 	document, err := goquery.NewDocumentFromReader(response.Body)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Unable to create a goquery document from", uri, err)
 		return nil
 	}
 
