@@ -51,7 +51,7 @@ func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
 	for _, job := range jobs {
 		jobBarrier.Add(1)
 		//modules := webui.ParseModules(job.Url)
-		go webui.ParseModules(job.Url, job.Path)
+		go webui.ParseModules(job)
 	}
 
 	<-jobChan
@@ -197,24 +197,25 @@ func getArchFromJson(job_id string) (string, error) {
 	return "", fmt.Errorf("could not parse json file")
 }
 
-func (webui *Webui) ParseModules(url string, path string) []string {
+func (webui *Webui) ParseModules(job data.Job) {
 	defer jobBarrier.Done()
 	jobChan <- true
 
-	var modules []string
+	// var modules []string
 	moduleMap := make(map[string]bool)
 
-	autoinst_log := url + "/file/autoinst-log.txt"
+	autoinst_log := job.Url + "/file/autoinst-log.txt"
+
 	resp, err := http.Get(autoinst_log)
 	if err != nil {
-		log.Fatal("Unable to get autoinst-log.txt from", url, err)
+		log.Fatal("Unable to get autoinst-log.txt from", job.Url, err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusOK {
 		bodyBytes, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			log.Fatal("Unabe to read autoinst-log.txt from", url, err)
+			log.Fatal("Unabe to read autoinst-log.txt from", job.Url, err)
 		}
 		bodyString := string(bodyBytes)
 
@@ -223,21 +224,31 @@ func (webui *Webui) ParseModules(url string, path string) []string {
 			line := scanner.Text()
 
 			if strings.Contains(line, "[debug] scheduling") {
-				testline := strings.Split(line, " ")
-				module := strings.Split(testline[len(testline)-1], "tests/")[1]
-				if _, ok := moduleMap[module]; !ok {
+				testline := strings.Split(line, " tests/")
+				moduleName := testline[1]
+				moduleAlias := strings.Split(testline[0], "scheduling ")[1]
+
+				if _, ok := moduleMap[moduleName]; !ok {
 					// module not yet registered
-					moduleMap[module] = true
-					modules = append(modules, module)
+					moduleMap[moduleName] = true
+					// modules = append(modules, moduleName)
+
+					for _, failedModule := range job.FailedModules {
+						// failedModules contains the modules by their aliases
+						if failedModule == moduleAlias {
+							// mark this module as failed
+							moduleMap[moduleName] = false
+						}
+					}
 				}
 			}
 		}
 	}
-	fmt.Println("Parsed job:", url, "|with path:", path)
-	fmt.Println("Modules: ", modules)
+	fmt.Println("Parsed job:", job.Url, "|with path:", job.Path)
+	fmt.Println("Modules: ", moduleMap)
 
 	<-jobChan
-	return modules
+	// return modules
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
