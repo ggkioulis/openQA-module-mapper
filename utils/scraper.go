@@ -32,7 +32,7 @@ func (webui *Webui) Scrape() {
 	jobGroups := webui.ParseJobGroups()
 
 	// number of jobs being parsed in parallel
-	jobChan = make(chan bool, 32)
+	jobChan = make(chan bool, 8)
 
 	for _, jobGroup := range jobGroups {
 		jobBarrier.Add(1)
@@ -104,6 +104,13 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 	document := ParseAndGetDocument(build.Url)
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
+		var jobName string
+		rows.Find("span").First().Each(func(i int, s *goquery.Selection) {
+			name, status := s.Attr("title")
+			if status == true {
+				jobName = name
+			}
+		})
 		rows.Find("td").Each(func(i int, cell *goquery.Selection) {
 			description, status := cell.Attr("name")
 			if status == true {
@@ -136,7 +143,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								})
 							}
 
-							arch, jobName, err := getArchFromJson(jobId)
+							arch, err := getArchFromJson(jobId)
 							if err != nil {
 								log.Fatal(err)
 							}
@@ -162,7 +169,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 // TODO Do not parse for TEST_SUITE_NAME, the only point is to get
 // <span title="create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15">create_hdd_minimal_base+sdk_withhome@s390x-kvm-sle15</span>
-func getArchFromJson(job_id string) (string, string, error) {
+func getArchFromJson(job_id string) (string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
@@ -185,14 +192,11 @@ func getArchFromJson(job_id string) (string, string, error) {
 
 			if strings.Contains(line, `"ARCH" :`) {
 				arch = strings.Split(line, `"`)[3]
-			}
-			if strings.Contains(line, `"TEST_SUITE_NAME" :`) {
-				testName := strings.Split(line, `"`)[3]
-				return arch, testName, nil
+				return arch, nil
 			}
 		}
 	}
-	return "", "", fmt.Errorf("could not parse json file")
+	return "", fmt.Errorf("could not parse json file")
 }
 
 func (webui *Webui) ParseModules(url string, path string) []string {
