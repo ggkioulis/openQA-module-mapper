@@ -202,6 +202,7 @@ func (webui *Webui) ParseModules(url string, path string) []string {
 	jobChan <- true
 
 	var modules []string
+	moduleMap := make(map[string]bool)
 
 	autoinst_log := url + "/file/autoinst-log.txt"
 	resp, err := http.Get(autoinst_log)
@@ -217,22 +218,23 @@ func (webui *Webui) ParseModules(url string, path string) []string {
 		}
 		bodyString := string(bodyBytes)
 
-		reached_scheduling := false
 		scanner := bufio.NewScanner(strings.NewReader(bodyString))
 		for scanner.Scan() {
 			line := scanner.Text()
 
 			if strings.Contains(line, "[debug] scheduling") {
-				reached_scheduling = true
 				testline := strings.Split(line, " ")
-				modules = append(modules, strings.Split(testline[len(testline)-1], "tests/")[1])
-			} else if reached_scheduling {
-				// if there are no more scheduling lines, break
-				break
+				module := strings.Split(testline[len(testline)-1], "tests/")[1]
+				if _, ok := moduleMap[module]; !ok {
+					// module not yet registered
+					moduleMap[module] = true
+					modules = append(modules, module)
+				}
 			}
 		}
 	}
 	fmt.Println("Parsed job:", url, "|with path:", path)
+	fmt.Println("Modules: ", modules)
 
 	<-jobChan
 	return modules
