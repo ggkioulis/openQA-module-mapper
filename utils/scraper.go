@@ -32,7 +32,7 @@ func (webui *Webui) Scrape() {
 	jobGroups := webui.ParseJobGroups()
 
 	// number of jobs being parsed in parallel
-	jobChan = make(chan bool, 8)
+	jobChan = make(chan bool, 2)
 
 	for _, jobGroup := range jobGroups {
 		jobBarrier.Add(1)
