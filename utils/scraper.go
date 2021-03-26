@@ -125,7 +125,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
 						result = strings.TrimSpace(state[1])
-						if result != "skipped" {
+						if result != "skipped" && result != "incomplete" {
 							// If job is Done and Not Skipped, get the job data
 							jobId = job_description_slice[2]
 
