@@ -32,28 +32,30 @@ func (webui *Webui) Scrape() {
 	jobGroups := webui.ParseJobGroups()
 
 	// number of jobs being parsed in parallel
-	jobChan = make(chan bool, 2)
+	jobChan = make(chan bool, 4)
 
 	for _, jobGroup := range jobGroups {
-		jobBarrier.Add(1)
+		// jobBarrier.Add(1)
+
+		// Do not run ParallelizeJobs concurrently, results in cancelled requests
 		webui.ParallelizeJobs(jobGroup)
 	}
 	jobBarrier.Wait()
 }
 
 func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
-	defer jobBarrier.Done()
-	jobChan <- true
+	// defer jobBarrier.Done()
+	// jobChan <- true
 
 	build := webui.ParseBuilds(jobGroup)
 	jobs := webui.ParseJobs(build)
 
 	for _, job := range jobs {
 		jobBarrier.Add(1)
-		go webui.ParseModules(&job)
+		go webui.ParseModules(job)
 	}
 
-	<-jobChan
+	// <-jobChan
 	// jobBarrier.Wait()
 }
 
@@ -196,11 +198,11 @@ func getArchFromJson(job_id string) (string, error) {
 	return "", fmt.Errorf("could not parse json file")
 }
 
-func (webui *Webui) ParseModules(job *data.Job) {
+func (webui *Webui) ParseModules(job data.Job) {
 	defer jobBarrier.Done()
 	jobChan <- true
 
-	// var modules []string
+	job.Schedule = ""
 	job.ModuleMap = make(map[string]bool)
 
 	autoinst_log := job.Url + "/file/autoinst-log.txt"
@@ -230,7 +232,7 @@ func (webui *Webui) ParseModules(job *data.Job) {
 				if _, ok := job.ModuleMap[moduleName]; !ok {
 					// module not yet registered
 					job.ModuleMap[moduleName] = true
-					// modules = append(modules, moduleName)
+					job.Schedule += "tests/" + moduleName + ","
 
 					for _, failedModule := range job.FailedModuleAliases {
 						// failedModules contains the modules by their aliases
@@ -243,10 +245,7 @@ func (webui *Webui) ParseModules(job *data.Job) {
 			}
 		}
 	}
-	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
-	fmt.Println("Modules: ", job.ModuleMap)
-	fmt.Println("-----------------------------------")
-	// reportJobResults(*job)
+	reportJobResults(job)
 	<-jobChan
 }
 
@@ -270,6 +269,12 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 
 func reportJobResults(job data.Job) {
 	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
-	fmt.Println("Modules: ", job.ModuleMap)
-	fmt.Println("-----------------------------------")
+	fmt.Println("Schedule: ", job.Schedule)
+	fmt.Printf("Failed Modules: ")
+	for key, val := range job.ModuleMap {
+		if !val {
+			fmt.Printf("%s ", key)
+		}
+	}
+	fmt.Println("\n-----------------------------------")
 }

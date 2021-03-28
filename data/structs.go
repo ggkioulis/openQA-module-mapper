@@ -18,4 +18,5 @@ type Job struct {
 	Result              string
 	FailedModuleAliases []string
 	ModuleMap           map[string]bool
+	Schedule            string
 }
