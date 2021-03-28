@@ -126,8 +126,8 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
 						result = strings.TrimSpace(state[1])
-						if result != "skipped" && result != "incomplete" {
-							// If job is Done and Not Skipped, get the job data
+						if result != "skipped" && result != "incomplete" && result != "parallel_failed"{
+							// If job is Done and Not Skipped or Incomplete, or Parallel Failed, get the job data
 							jobId = job_description_slice[2]
 
 							if result == "failed" {
@@ -146,7 +146,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 							arch, err := getArchFromJson(jobId)
 							if err != nil {
-								log.Fatal("Error getting Arch from Json for", jobId, err)
+								log.Fatal("Error getting Arch from Json for ", jobId, err)
 							}
 
 							job := data.Job{
