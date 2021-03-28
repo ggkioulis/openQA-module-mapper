@@ -50,8 +50,7 @@ func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
 
 	for _, job := range jobs {
 		jobBarrier.Add(1)
-		//modules := webui.ParseModules(job.Url)
-		go webui.ParseModules(job)
+		go webui.ParseModules(&job)
 	}
 
 	<-jobChan
@@ -117,7 +116,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 				// We are inside the specific job's cell
 				var jobId string
 				var result string
-				var failedModules []string
+				var failedModuleAliases []string
 
 				job_description_slice := strings.Split(description, "_")
 				title, exists := cell.Find("i").Attr("title")
@@ -138,7 +137,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 										if len(modules) > 1 {
 											modules = modules[1:]
 										}
-										failedModules = append(failedModules, modules...)
+										failedModuleAliases = append(failedModuleAliases, modules...)
 									}
 								})
 							}
@@ -149,12 +148,12 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 							}
 
 							job := data.Job{
-								Path:          build.Path + separator + jobName + separator + arch,
-								Url:           webui.Url + "/tests/" + jobId,
-								Name:          jobName,
-								ID:            jobId,
-								Result:        result,
-								FailedModules: failedModules,
+								Path:                build.Path + separator + jobName + separator + arch,
+								Url:                 webui.Url + "/tests/" + jobId,
+								Name:                jobName,
+								ID:                  jobId,
+								Result:              result,
+								FailedModuleAliases: failedModuleAliases,
 							}
 
 							jobs = append(jobs, job)
@@ -197,12 +196,12 @@ func getArchFromJson(job_id string) (string, error) {
 	return "", fmt.Errorf("could not parse json file")
 }
 
-func (webui *Webui) ParseModules(job data.Job) {
+func (webui *Webui) ParseModules(job *data.Job) {
 	defer jobBarrier.Done()
 	jobChan <- true
 
 	// var modules []string
-	moduleMap := make(map[string]bool)
+	job.ModuleMap = make(map[string]bool)
 
 	autoinst_log := job.Url + "/file/autoinst-log.txt"
 
@@ -228,27 +227,27 @@ func (webui *Webui) ParseModules(job data.Job) {
 				moduleName := testline[1]
 				moduleAlias := strings.Split(testline[0], "scheduling ")[1]
 
-				if _, ok := moduleMap[moduleName]; !ok {
+				if _, ok := job.ModuleMap[moduleName]; !ok {
 					// module not yet registered
-					moduleMap[moduleName] = true
+					job.ModuleMap[moduleName] = true
 					// modules = append(modules, moduleName)
 
-					for _, failedModule := range job.FailedModules {
+					for _, failedModule := range job.FailedModuleAliases {
 						// failedModules contains the modules by their aliases
 						if failedModule == moduleAlias {
 							// mark this module as failed
-							moduleMap[moduleName] = false
+							job.ModuleMap[moduleName] = false
 						}
 					}
 				}
 			}
 		}
 	}
-	fmt.Println("Parsed job:", job.Url, "|with path:", job.Path)
-	fmt.Println("Modules: ", moduleMap)
-
+	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
+	fmt.Println("Modules: ", job.ModuleMap)
+	fmt.Println("-----------------------------------")
+	// reportJobResults(*job)
 	<-jobChan
-	// return modules
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
@@ -267,4 +266,10 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 	}
 
 	return document
+}
+
+func reportJobResults(job data.Job) {
+	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
+	fmt.Println("Modules: ", job.ModuleMap)
+	fmt.Println("-----------------------------------")
 }

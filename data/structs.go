@@ -11,10 +11,11 @@ type Build struct {
 }
 
 type Job struct {
-	Path          string
-	Url           string
-	Name          string
-	ID            string
-	Result        string
-	FailedModules []string
+	Path                string
+	Url                 string
+	Name                string
+	ID                  string
+	Result              string
+	FailedModuleAliases []string
+	ModuleMap           map[string]bool
 }
