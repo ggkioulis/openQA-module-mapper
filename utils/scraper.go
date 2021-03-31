@@ -137,7 +137,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
 						result = strings.TrimSpace(state[1])
-						if result != "skipped" && result != "incomplete" && result != "parallel_failed"{
+						if result != "skipped" && result != "incomplete" && result != "parallel_failed" {
 							// If job is Done and Not Skipped or Incomplete, or Parallel Failed, get the job data
 							jobId = job_description_slice[2]
 
@@ -247,7 +247,8 @@ func (webui *Webui) ParseModules(job data.Job) {
 					if _, ok := job.ModuleMap[moduleName]; !ok {
 						// module not yet registered
 						job.ModuleMap[moduleName] = true
-						job.Schedule += "tests/" + moduleName + ","
+						strippedName := strings.Split(moduleName, ".pm")[0]
+						job.Schedule += "tests/" + strippedName + ","
 
 						for _, failedModule := range job.FailedModuleAliases {
 							// failedModules contains the modules by their aliases
@@ -260,8 +261,9 @@ func (webui *Webui) ParseModules(job data.Job) {
 				}
 			}
 		}
+		// If we can parse the autoinst-log.txt, create an entry
+		reportJobResults(job)
 	}
-	reportJobResults(job)
 	// <-jobChan
 }
 
@@ -286,6 +288,7 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 func reportJobResults(job data.Job) {
 	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
 	fmt.Println("Schedule: ", job.Schedule)
+	// fmt.Println("ModuleMap: ", job.ModuleMap)
 	fmt.Printf("Failed Modules: ")
 	for key, val := range job.ModuleMap {
 		if !val {
