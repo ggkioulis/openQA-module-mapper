@@ -7,7 +7,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	"sync"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
@@ -19,8 +18,8 @@ const separator = " > "
 
 // var jobGroupBarrier sync.WaitGroup
 
-var jobBarrier sync.WaitGroup
-var jobChan chan bool
+// var jobBarrier sync.WaitGroup
+// var jobChan chan bool
 
 type Webui struct {
 	Name string
@@ -32,7 +31,7 @@ func (webui *Webui) Scrape() {
 	jobGroups := webui.ParseJobGroups()
 
 	// number of jobs being parsed in parallel
-	jobChan = make(chan bool, 4)
+	// jobChan = make(chan bool, 1)
 
 	for _, jobGroup := range jobGroups {
 		// jobBarrier.Add(1)
@@ -40,7 +39,7 @@ func (webui *Webui) Scrape() {
 		// Do not run ParallelizeJobs concurrently, results in cancelled requests
 		webui.ParallelizeJobs(jobGroup)
 	}
-	jobBarrier.Wait()
+	// jobBarrier.Wait()
 }
 
 func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
@@ -51,8 +50,8 @@ func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
 	jobs := webui.ParseJobs(build)
 
 	for _, job := range jobs {
-		jobBarrier.Add(1)
-		go webui.ParseModules(job)
+		// jobBarrier.Add(1)
+		webui.ParseModules(job)
 	}
 
 	// <-jobChan
@@ -64,20 +63,26 @@ func (webui *Webui) ParseJobGroups() []data.JobGroup {
 	pathPrefix := webui.Name + separator + "Job Groups"
 	var jobGroups []data.JobGroup
 
+	// TODO retries
+	fmt.Println("ParseJobGroups: ", pathPrefix, " url:", webui.Url)
 	document := ParseAndGetDocument(webui.Url)
+
 	document.Find("a.dropdown-item").Each(func(i int, s *goquery.Selection) {
 		href, _ := s.Attr("href")
 		if strings.Contains(href, "parent") {
 			parent = s.Text()
 		} else {
-			// We found a job group, append it to the end of the path
-			path := pathPrefix + separator + parent + separator + s.Text()
-			jobGroup := data.JobGroup{
-				Path: path,
-				Url:  webui.Url + href,
-			}
+			// If the parent job group should not be skipped
+			if !data.JobGroupsToSkip[parent] {
+				// We found a job group, append it to the end of the path
+				path := pathPrefix + separator + parent + separator + s.Text()
+				jobGroup := data.JobGroup{
+					Path: path,
+					Url:  webui.Url + href,
+				}
 
-			jobGroups = append(jobGroups, jobGroup)
+				jobGroups = append(jobGroups, jobGroup)
+			}
 		}
 	})
 
@@ -85,7 +90,10 @@ func (webui *Webui) ParseJobGroups() []data.JobGroup {
 }
 
 func (webui *Webui) ParseBuilds(jobGroup data.JobGroup) data.Build {
+	// TODO retries
+	fmt.Println("ParseBuilds: ", jobGroup.Path, " url:", jobGroup.Url)
 	document := ParseAndGetDocument(jobGroup.Url)
+
 	var build data.Build
 	s := document.Find("div.px-2.build-label.text-nowrap").First()
 	s.Find("a").Each(func(k int, slc *goquery.Selection) {
@@ -103,7 +111,10 @@ func (webui *Webui) ParseBuilds(jobGroup data.JobGroup) data.Build {
 func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	var jobs []data.Job
 
+	// TODO retries
+	fmt.Println("ParseJobs: ", build.Path, " url:", build.Url)
 	document := ParseAndGetDocument(build.Url)
+
 	document.Find("tr").Each(func(i int, rows *goquery.Selection) {
 		var jobName string
 		rows.Find("span").First().Each(func(i int, s *goquery.Selection) {
@@ -199,8 +210,8 @@ func getArchFromJson(job_id string) (string, error) {
 }
 
 func (webui *Webui) ParseModules(job data.Job) {
-	defer jobBarrier.Done()
-	jobChan <- true
+	// defer jobBarrier.Done()
+	// jobChan <- true
 
 	job.Schedule = ""
 	job.ModuleMap = make(map[string]bool)
@@ -226,19 +237,24 @@ func (webui *Webui) ParseModules(job data.Job) {
 
 			if strings.Contains(line, "[debug] scheduling") {
 				testline := strings.Split(line, " tests/")
-				moduleName := testline[1]
-				moduleAlias := strings.Split(testline[0], "scheduling ")[1]
 
-				if _, ok := job.ModuleMap[moduleName]; !ok {
-					// module not yet registered
-					job.ModuleMap[moduleName] = true
-					job.Schedule += "tests/" + moduleName + ","
+				// if module is in tests, add it
+				// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
+				if len(testline) > 1 {
+					moduleName := testline[1]
+					moduleAlias := strings.Split(testline[0], "scheduling ")[1]
 
-					for _, failedModule := range job.FailedModuleAliases {
-						// failedModules contains the modules by their aliases
-						if failedModule == moduleAlias {
-							// mark this module as failed
-							job.ModuleMap[moduleName] = false
+					if _, ok := job.ModuleMap[moduleName]; !ok {
+						// module not yet registered
+						job.ModuleMap[moduleName] = true
+						job.Schedule += "tests/" + moduleName + ","
+
+						for _, failedModule := range job.FailedModuleAliases {
+							// failedModules contains the modules by their aliases
+							if failedModule == moduleAlias {
+								// mark this module as failed
+								job.ModuleMap[moduleName] = false
+							}
 						}
 					}
 				}
@@ -246,7 +262,7 @@ func (webui *Webui) ParseModules(job data.Job) {
 		}
 	}
 	reportJobResults(job)
-	<-jobChan
+	// <-jobChan
 }
 
 func ParseAndGetDocument(uri string) *goquery.Document {
