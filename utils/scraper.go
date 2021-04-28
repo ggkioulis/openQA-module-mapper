@@ -47,11 +47,15 @@ func (webui *Webui) ParallelizeJobs(jobGroup data.JobGroup) {
 	// jobChan <- true
 
 	build := webui.ParseBuilds(jobGroup)
-	jobs := webui.ParseJobs(build)
 
-	for _, job := range jobs {
-		// jobBarrier.Add(1)
-		webui.ParseModules(job)
+	// Skip empty Job Groups
+	if build.Url != "" {
+		jobs := webui.ParseJobs(build)
+
+		for _, job := range jobs {
+			// jobBarrier.Add(1)
+			webui.ParseModules(job)
+		}
 	}
 
 	// <-jobChan
