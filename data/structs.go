@@ -15,6 +15,7 @@ type Job struct {
 	Url                 string
 	Name                string
 	ID                  string
+	Machine             string
 	Result              string
 	FailedModuleAliases []string
 	ModuleMap           map[string]bool

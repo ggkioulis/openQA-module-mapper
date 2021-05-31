@@ -159,7 +159,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								})
 							}
 
-							arch, err := getArchFromJson(jobId)
+							arch, machine, err := getArchFromJson(jobId)
 							if err != nil {
 								log.Fatal("Error getting Arch from Json for ", jobId, err)
 							}
@@ -169,6 +169,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								Url:                 webui.Url + "/tests/" + jobId,
 								Name:                jobName,
 								ID:                  jobId,
+								Machine:             machine,
 								Result:              result,
 								FailedModuleAliases: failedModuleAliases,
 							}
@@ -183,7 +184,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	return jobs
 }
 
-func getArchFromJson(job_id string) (string, error) {
+func getArchFromJson(job_id string) (string, string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
@@ -201,16 +202,24 @@ func getArchFromJson(job_id string) (string, error) {
 
 		scanner := bufio.NewScanner(strings.NewReader(bodyString))
 		var arch string
+		var machine string
+
 		for scanner.Scan() {
 			line := scanner.Text()
 
 			if strings.Contains(line, `"ARCH" :`) {
 				arch = strings.Split(line, `"`)[3]
-				return arch, nil
+				// return arch, nil
+			}
+
+			if strings.Contains(line, `"MACHINE" :`) {
+				machine = strings.Split(line, `"`)[3]
 			}
 		}
+
+		return arch, machine, nil
 	}
-	return "", fmt.Errorf("could not parse json file")
+	return "", "", fmt.Errorf("could not parse json file")
 }
 
 func (webui *Webui) ParseModules(job data.Job) {
@@ -291,6 +300,7 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 
 func reportJobResults(job data.Job) {
 	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
+	fmt.Println("Machine: ", job.Machine)
 	fmt.Println("Schedule: ", job.Schedule)
 	// fmt.Println("ModuleMap: ", job.ModuleMap)
 	fmt.Printf("Failed Modules: ")
