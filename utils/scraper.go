@@ -159,7 +159,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								})
 							}
 
-							arch, machine, err := getArchFromJson(jobId)
+							arch, machine, yaml_schedule, err := getArchFromJson(jobId)
 							if err != nil {
 								log.Fatal("Error getting Arch from Json for ", jobId, err)
 							}
@@ -170,6 +170,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								Name:                jobName,
 								ID:                  jobId,
 								Machine:             machine,
+								Yaml_schedule:       yaml_schedule,
 								Result:              result,
 								FailedModuleAliases: failedModuleAliases,
 							}
@@ -184,7 +185,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	return jobs
 }
 
-func getArchFromJson(job_id string) (string, string, error) {
+func getArchFromJson(job_id string) (string, string, string, error) {
 	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
@@ -203,6 +204,7 @@ func getArchFromJson(job_id string) (string, string, error) {
 		scanner := bufio.NewScanner(strings.NewReader(bodyString))
 		var arch string
 		var machine string
+		var yaml_schedule string
 
 		for scanner.Scan() {
 			line := scanner.Text()
@@ -211,15 +213,17 @@ func getArchFromJson(job_id string) (string, string, error) {
 				arch = strings.Split(line, `"`)[3]
 				// return arch, nil
 			}
-
 			if strings.Contains(line, `"MACHINE" :`) {
 				machine = strings.Split(line, `"`)[3]
 			}
+			if strings.Contains(line, `"YAML_SCHEDULE" :`) {
+				yaml_schedule = strings.Split(line, `"`)[3]
+			}
 		}
 
-		return arch, machine, nil
+		return arch, machine, yaml_schedule, nil
 	}
-	return "", "", fmt.Errorf("could not parse json file")
+	return "", "", "", fmt.Errorf("could not parse json file")
 }
 
 func (webui *Webui) ParseModules(job data.Job) {
@@ -301,6 +305,7 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 func reportJobResults(job data.Job) {
 	fmt.Println("Parsed job:", job.Url, "| with path:", job.Path)
 	fmt.Println("Machine: ", job.Machine)
+	fmt.Println("YAML_SCHEDULE: ", job.Yaml_schedule)
 	fmt.Println("Schedule: ", job.Schedule)
 	// fmt.Println("ModuleMap: ", job.ModuleMap)
 	fmt.Printf("Failed Modules: ")

@@ -19,6 +19,7 @@ type Job struct {
 	Result              string
 	FailedModuleAliases []string
 	ModuleMap           map[string]bool
+	Yaml_schedule       string
 	Schedule            string
 }
 
