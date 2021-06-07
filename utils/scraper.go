@@ -141,7 +141,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 					state := strings.Split(title, ":")
 					if state[0] == "Done" {
 						result = strings.TrimSpace(state[1])
-						if result != "skipped" && result != "incomplete" && result != "parallel_failed" {
+						if result != "skipped" && result != "incomplete" && result != "parallel_failed" && result != "timeout_exceeded" {
 							// If job is Done and Not Skipped or Incomplete, or Parallel Failed, get the job data
 							jobId = job_description_slice[2]
 
@@ -159,7 +159,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 								})
 							}
 
-							arch, machine, yaml_schedule, err := getArchFromJson(jobId)
+							arch, machine, yaml_schedule, err := webui.getArchFromJson(jobId)
 							if err != nil {
 								log.Fatal("Error getting Arch from Json for ", jobId, err)
 							}
@@ -185,8 +185,9 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 	return jobs
 }
 
-func getArchFromJson(job_id string) (string, string, string, error) {
-	vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
+func (webui *Webui) getArchFromJson(job_id string) (string, string, string, error) {
+	// vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
+	vars_json := webui.Url + "/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
 		log.Fatal("Unable to get vars.json for job", job_id, err)
@@ -223,6 +224,10 @@ func getArchFromJson(job_id string) (string, string, string, error) {
 
 		return arch, machine, yaml_schedule, nil
 	}
+	// Scan for page not found
+	// document := ParseAndGetDocument(vars_json)
+	// document.Find("h1").Each(func(i int, rows *goquery.Selection)
+	// if
 	return "", "", "", fmt.Errorf("could not parse json file")
 }
 

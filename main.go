@@ -6,8 +6,8 @@ import (
 
 func main() {
 	osd := utils.Webui{
-		Name: "OSD",
-		Url:  "https://openqa.suse.de",
+		Name: "O00",
+		Url:  "https://openqa.opensuse.org",
 	}
 
 	osd.Scrape()
