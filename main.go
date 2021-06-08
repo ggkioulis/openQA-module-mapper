@@ -4,14 +4,16 @@ import (
 	"github.com/ggkioulis/openQA-module-mapper/utils"
 )
 
-func main() {
-	osd := utils.Webui{
-		Name: "O00",
-		Url:  "https://openqa.opensuse.org",
-	}
+var o3 = utils.Webui{
+	Name: "O3",
+	Url:  "https://openqa.opensuse.org",
+}
 
+var osd = utils.Webui{
+	Name: "OSD",
+	Url:  "https://openqa.opensuse.org",
+}
+
+func main() {
 	osd.Scrape()
-	// utils.ParseBuilds()
-	//utils.ParseJobs()
-	//utils.ParseModules()
 }
