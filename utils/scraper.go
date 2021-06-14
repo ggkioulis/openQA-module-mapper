@@ -2,6 +2,7 @@ package utils
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -15,6 +16,9 @@ import (
 )
 
 const separator = " > "
+
+var PageNotFoundError = errors.New("Page not found")
+var JsonParseError = errors.New("Json could not be parsed")
 
 // var jobGroupBarrier sync.WaitGroup
 
@@ -161,21 +165,26 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 
 							arch, machine, yaml_schedule, err := webui.getArchFromJson(jobId)
 							if err != nil {
-								log.Fatal("Error getting Arch from Json for ", jobId, err)
-							}
+								if errors.Is(err, JsonParseError) {
+									log.Fatal("Error getting Arch from Json for ", jobId, err)
+								} else if errors.Is(err, PageNotFoundError) {
+									// Do nothing for now, just skip the job
+								}
+							} else {
 
-							job := data.Job{
-								Path:                build.Path + separator + jobName + separator + arch,
-								Url:                 webui.Url + "/tests/" + jobId,
-								Name:                jobName,
-								ID:                  jobId,
-								Machine:             machine,
-								Yaml_schedule:       yaml_schedule,
-								Result:              result,
-								FailedModuleAliases: failedModuleAliases,
-							}
+								job := data.Job{
+									Path:                build.Path + separator + jobName + separator + arch,
+									Url:                 webui.Url + "/tests/" + jobId,
+									Name:                jobName,
+									ID:                  jobId,
+									Machine:             machine,
+									Yaml_schedule:       yaml_schedule,
+									Result:              result,
+									FailedModuleAliases: failedModuleAliases,
+								}
 
-							jobs = append(jobs, job)
+								jobs = append(jobs, job)
+							}
 						}
 					}
 				}
@@ -186,9 +195,7 @@ func (webui *Webui) ParseJobs(build data.Build) []data.Job {
 }
 
 func (webui *Webui) getArchFromJson(job_id string) (string, string, string, error) {
-	// vars_json := "https://openqa.suse.de/tests/" + job_id + "/file/vars.json"
-	// vars_json := webui.Url + "/tests/" + job_id + "/file/vars.json"
-	vars_json := "https://openqa.opensuse.org/tests/97528/file/vars.json"
+	vars_json := webui.Url + "/tests/" + job_id + "/file/vars.json"
 	resp, err := http.Get(vars_json)
 	if err != nil {
 		log.Fatal("Unable to get vars.json for job", job_id, err)
@@ -229,11 +236,11 @@ func (webui *Webui) getArchFromJson(job_id string) (string, string, string, erro
 		document := ParseAndGetDocument(vars_json)
 		name, _ := document.Find("h1").Html()
 		if name == "Page not found" {
-			return "", "", "", fmt.Errorf(" page doesn't exist")
+			return "", "", "", PageNotFoundError
 		}
 	}
 
-	return "", "", "", fmt.Errorf(" could not parse json file")
+	return "", "", "", JsonParseError
 }
 
 func (webui *Webui) ParseModules(job data.Job) {
