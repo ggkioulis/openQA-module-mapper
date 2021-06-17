@@ -251,6 +251,7 @@ func (webui *Webui) ParseModules(job data.Job) {
 	job.ModuleMap = make(map[string]bool)
 
 	autoinst_log := job.Url + "/file/autoinst-log.txt"
+	// autoinst_log := "https://openqa.opensuse.org/tests/1784794/file/autoinst-log.txt"
 
 	resp, err := http.Get(autoinst_log)
 	if err != nil {
@@ -270,13 +271,13 @@ func (webui *Webui) ParseModules(job data.Job) {
 			line := scanner.Text()
 
 			if strings.Contains(line, "[debug] scheduling") {
-				testline := strings.Split(line, " tests/")
+				testline := strings.Split(line, "tests/")
 
 				// if module is in tests, add it
 				// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
 				if len(testline) > 1 {
 					moduleName := testline[1]
-					moduleAlias := strings.Split(testline[0], "scheduling ")[1]
+					moduleAlias := strings.Split(strings.Split(testline[0], "scheduling ")[1], " ")[0]
 
 					if _, ok := job.ModuleMap[moduleName]; !ok {
 						// module not yet registered
