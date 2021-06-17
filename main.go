@@ -11,7 +11,7 @@ var o3 = utils.Webui{
 
 var osd = utils.Webui{
 	Name: "OSD",
-	Url:  "https://openqa.opensuse.org",
+	Url:  "https://openqa.suse.de",
 }
 
 func main() {
