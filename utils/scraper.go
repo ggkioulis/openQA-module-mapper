@@ -271,11 +271,17 @@ func (webui *Webui) ParseModules(job data.Job) {
 			line := scanner.Text()
 
 			if strings.Contains(line, "[debug] scheduling") {
-				testline := strings.Split(line, "tests/")
+				testline := strings.Split(line, " tests/")
 
-				// if module is in tests, add it
-				// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
-				if len(testline) > 1 {
+				if len(testline) == 1 {
+					testline = strings.Split(line, "/tests/")
+
+					if len(testline) == 1 {
+						continue
+					}
+				} else {
+					// module is in test, so add it
+					// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
 					moduleName := testline[1]
 					moduleAlias := strings.Split(strings.Split(testline[0], "scheduling ")[1], " ")[0]
 

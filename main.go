@@ -15,5 +15,5 @@ var osd = utils.Webui{
 }
 
 func main() {
-	osd.Scrape()
+	o3.Scrape()
 }
