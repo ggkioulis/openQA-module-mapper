@@ -279,24 +279,24 @@ func (webui *Webui) ParseModules(job data.Job) {
 					if len(testline) == 1 {
 						continue
 					}
-				} else {
-					// module is in test, so add it
-					// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
-					moduleName := testline[1]
-					moduleAlias := strings.Split(strings.Split(testline[0], "scheduling ")[1], " ")[0]
+				} 
 
-					if _, ok := job.ModuleMap[moduleName]; !ok {
-						// module not yet registered
-						job.ModuleMap[moduleName] = true
-						strippedName := strings.Split(moduleName, ".pm")[0]
-						job.Schedule += "tests/" + strippedName + ","
+				// module is in test, so add it
+				// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
+				moduleName := testline[1]
+				moduleAlias := strings.Split(strings.Split(testline[0], "scheduling ")[1], " ")[0]
 
-						for _, failedModule := range job.FailedModuleAliases {
-							// failedModules contains the modules by their aliases
-							if failedModule == moduleAlias {
-								// mark this module as failed
-								job.ModuleMap[moduleName] = false
-							}
+				if _, ok := job.ModuleMap[moduleName]; !ok {
+					// module not yet registered
+					job.ModuleMap[moduleName] = true
+					strippedName := strings.Split(moduleName, ".pm")[0]
+					job.Schedule += "tests/" + strippedName + ","
+
+					for _, failedModule := range job.FailedModuleAliases {
+						// failedModules contains the modules by their aliases
+						if failedModule == moduleAlias {
+							// mark this module as failed
+							job.ModuleMap[moduleName] = false
 						}
 					}
 				}
