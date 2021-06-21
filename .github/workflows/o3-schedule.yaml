@@ -2,7 +2,7 @@ name: Schedule scraping of openqa.opensuse.org
 on:
   push:
     branches:
-      - 'master'
+      - 'o3'
   schedule:
     - cron:  '0 23 * * *'
 
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          ref: o3
       
       - name: Setup Go environment
         uses: actions/setup-go@v2
@@ -22,5 +22,10 @@ jobs:
         run: go build -o openQA-module-mapper
 
       - name: Scrape 
-        run: ./openQA-module-mapper
+        run: ./openQA-module-mapper &> o3.log
+
+      - name: Commit log
+        uses: stefanzweifel/git-auto-commit-action@v2.3.0
+        with: 
+          commit_message: Update o3 log
 
