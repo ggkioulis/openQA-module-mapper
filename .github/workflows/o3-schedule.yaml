@@ -10,7 +10,7 @@ jobs:
   scrape-o3:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: Checkout source code in o3 branch
         uses: actions/checkout@v2
         with:
           ref: o3
