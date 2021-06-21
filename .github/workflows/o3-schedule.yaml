@@ -1,8 +1,6 @@
 name: Schedule scraping of openqa.opensuse.org
 on:
   push:
-    branches:
-      - 'o3'
   schedule:
     - cron:  '0 23 * * *'
 
