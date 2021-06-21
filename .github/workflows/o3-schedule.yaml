@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source code in o3 branch
         uses: actions/checkout@v2
         with:
-          ref: o3
+          ref: 'o3'
       
       - name: Setup Go environment
         uses: actions/setup-go@v2
@@ -28,4 +28,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v2.3.0
         with: 
           commit_message: Update o3 log
+          branch: 'o3'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
