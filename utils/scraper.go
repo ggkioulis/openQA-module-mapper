@@ -279,7 +279,7 @@ func (webui *Webui) ParseModules(job data.Job) {
 					if len(testline) == 1 {
 						continue
 					}
-				} 
+				}
 
 				// module is in test, so add it
 				// we ignore lib modules that are being run, like sle-15-SP3-Online-aarch64-Build163.1-lynis_gnome
@@ -312,7 +312,7 @@ func ParseAndGetDocument(uri string) *goquery.Document {
 	// Make HTTP request
 	response, err := http.Get(uri)
 	if err != nil {
-		log.Fatal("Unable to get document from", uri, err)
+		log.Fatalf("Unable to get document from %s. Error: %s", uri, err)
 	}
 	defer response.Body.Close()
 
