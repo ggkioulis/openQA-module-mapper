@@ -1,8 +1,20 @@
 ParseJobGroups:  O3 > Job Groups  url: https://openqa.opensuse.org
 ParseBuilds:  O3 > Job Groups >  > openSUSE Tumbleweed  url: https://openqa.opensuse.org/group_overview/1
 ParseJobs:  O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106  url: https://openqa.opensuse.org/tests/overview?distri=microos&distri=opensuse&version=Tumbleweed&build=20240106&groupid=1
+Parsed job: https://openqa.opensuse.org/tests/3852679 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > container-host > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852675 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos > x86_64
 Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852676 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos@uefi > x86_64
+Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -43,6 +55,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852684 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852686 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos-combustion > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
@@ -55,13 +73,49 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852690 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos-old2microosnext > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852688 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos-wizard > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852689 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos2microosnext > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852685 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos_fips > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852691 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos_qemu > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852986 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos_qemu > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852693 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > container-host > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852696 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > container-host-old2microosnext > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852695 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > container-host2microosnext > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -79,7 +133,7 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852697 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852968 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > microos > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -91,15 +145,33 @@ YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid0_gpt.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852404 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > RAID10_gpt > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid10_gpt.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852365 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > RAID1_gpt > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid1_gpt.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852391 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > RAID5_gpt > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid5_gpt.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852364 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > apparmor > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/security/apparmor.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852966 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > apparmor_profile > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/security/apparmor_profile.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -121,7 +193,7 @@ YAML_SCHEDULE:  schedule/yast/opensuse/autoyast/autoyast_btrfs_quota.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852455 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > autoyast_create_hdd_gnome_uefi@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852963 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > autoyast_create_hdd_gnome_uefi@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/security/create_hdd_autoyast/create_hdd_x86_64_uefi.yaml
 Schedule:  
@@ -148,6 +220,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852394 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > autoyast_multi_btrfs > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/autoyast/autoyast_multi_btrfs.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852318 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > autoyast_reinstall_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/autoyast/autoyast_reinstall.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -331,9 +409,33 @@ YAML_SCHEDULE:  schedule/yast/opensuse/encryption/cryptlvm.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852395 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-documentation > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852619 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-documentation-x11 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852375 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-gb18030 > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/desktop/gb18030.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852525 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852621 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-gnome-x11 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -355,13 +457,19 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852562 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-remote-desktop-xrdp-client1@64bit_virtio > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853006 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-remote-desktop-xrdp-client1@64bit_virtio > x86_64
 Machine:  64bit_virtio
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852563 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-remote-desktop-xrdp-client2@64bit_virtio > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853004 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-remote-desktop-xrdp-client2@64bit_virtio > x86_64
+Machine:  64bit_virtio
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3853005 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > desktopapps-remote-desktop-xrdp-server1@64bit_virtio > x86_64
 Machine:  64bit_virtio
 YAML_SCHEDULE:  
 Schedule:  
@@ -397,6 +505,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852371 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > extra_tests_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/extra_tests_gnome.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852447 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > extra_tests_misc > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_misc.yaml
@@ -412,6 +526,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852596 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > extra_tests_on_xfce > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852388 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > extra_tests_textmode > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/extra_tests_textmode.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -433,14 +553,38 @@ YAML_SCHEDULE:  schedule/qam/common/mau-webserver.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852566 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > firewalld-policy-client > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852967 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > firewalld-policy-client > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/firewalld_policy_objects.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852296 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852964 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > firewalld-policy-firewall > x86_64
 Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/firewalld_policy_objects.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852965 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > firewalld-policy-server > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/firewalld_policy_objects.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3853002 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852981 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome@64bit_qxl > x86_64
+Machine:  64bit_qxl
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852382 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome@Laptop_64 > x86_64
+Machine:  Laptop_64
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -454,6 +598,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852606 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome+import_ssh_keys@64bit_cirrus > x86_64
 Machine:  64bit_cirrus
 YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852509 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome-boot-hdd > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/gnome.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -538,6 +688,42 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852277 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > installer_extended > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/installer_extended/installer_extended.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852629 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852376 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@64bit_cirrus-2G > x86_64
+Machine:  64bit_cirrus-2G
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852291 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@Laptop_64 > x86_64
+Machine:  Laptop_64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852603 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@USBboot_64 > x86_64
+Machine:  USBboot_64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852626 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde-sddm > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852306 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde-wayland@64bit_virtio > x86_64
+Machine:  64bit_virtio
+YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -673,7 +859,13 @@ YAML_SCHEDULE:  schedule/functional/extra_tests_qemu.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852617 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > remote-desktop-supportserver4 > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852960 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > remote-desktop-client4 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852959 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > remote-desktop-supportserver4 > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -835,6 +1027,12 @@ YAML_SCHEDULE:  schedule/security/system_check.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852373 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > system_performance > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852379 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > systemd-networkd > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_networkd.yaml
@@ -901,7 +1099,49 @@ YAML_SCHEDULE:  schedule/security/autoyast_btrfs_luks2_tw.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852472 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.2_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852477 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.0_cryptlvm@uefi > x86_64
+Machine:  uefi
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852469 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.0_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852628 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.0_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852471 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.1_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852466 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.1_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852478 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.2_cryptlvm@uefi > x86_64
+Machine:  uefi
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852958 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.2_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852957 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.2_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -916,6 +1156,30 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852633 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.2_with_service_check_nested_vm_down > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/migration/nested_vm.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852615 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.3_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852468 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.3_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852476 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_boot-into_snapshot_rollback_Leap_15.1_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/functional/upgrade_Leap_15.1_gnome.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852560 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > virtualization > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/virtualization/virtualization.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -940,6 +1204,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852422 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > wireguard_server > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/wireguard.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852299 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > xfce > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -970,6 +1240,18 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852503 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > yast2_firstboot_custom > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/firstboot/yast2_firstboot_custom.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852524 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > yast2_gui > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/yast2_gui/yast2_gui.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852956 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > yast2_ncurses > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/yast2_ncurses/yast2_ncurses.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -1087,6 +1369,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852646 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > jeos-extra@64bit_virtio-2G > x86_64
+Machine:  64bit_virtio-2G
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852647 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > jeos-filesystem@64bit_virtio > x86_64
 Machine:  64bit_virtio
 YAML_SCHEDULE:  
@@ -1171,6 +1459,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852661 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde-live-wayland@64bit_virtio-3G > x86_64
+Machine:  64bit_virtio-3G
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852666 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde-live_installation@64bit-3G > x86_64
 Machine:  64bit-3G
 YAML_SCHEDULE:  
@@ -1210,6 +1504,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852241 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > RAID0_gpt > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid0_gpt.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852264 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > RAID10_gpt > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid10_gpt.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -1267,6 +1567,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852955 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome@Laptop_64 > x86_64
+Machine:  Laptop_64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852247 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > gnome+selinux@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
@@ -1285,8 +1591,20 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852222 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@Laptop_64 > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852220 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852954 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@Laptop_64 > x86_64
 Machine:  Laptop_64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852221 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde@USBboot_64 > x86_64
+Machine:  USBboot_64
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -1297,7 +1615,7 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852239 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde_dual_windows10@uefi_win > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852953 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > kde_dual_windows10@uefi_win > x86_64
 Machine:  uefi_win
 YAML_SCHEDULE:  
 Schedule:  
@@ -1306,6 +1624,12 @@ Failed Modules:
 Parsed job: https://openqa.opensuse.org/tests/3852240 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > lvm-encrypt-separate-boot > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/encryption/lvm_encrypt_separate_boot.yaml
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852226 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > lxde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -1363,8 +1687,68 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852250 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.0_gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852251 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > upgrade_Leap_15.0_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852227 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > xfce > x86_64
 Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852252 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.2-gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852253 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.2-kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852255 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.3-gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852249 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.3-kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852232 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.4-gnome > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852233 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup-Leap-15.4-kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852989 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup_tw2twnext_gnome@64bit-3G > x86_64
+Machine:  64bit-3G
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852265 | with path: O3 > Job Groups >  > openSUSE Tumbleweed > Build20240106 > zdup_tw2twnext_kde@64bit-3G > x86_64
+Machine:  64bit-3G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -1773,6 +2157,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852707 | with path: O3 > Job Groups >  > openSUSE Tumbleweed AArch64 > Build20240106 > desktopapps-gnome > aarch64
+Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851872 | with path: O3 > Job Groups >  > openSUSE Tumbleweed AArch64 > Build20240106 > desktopapps-gnome-wayland > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -1937,6 +2327,12 @@ Failed Modules:
 -----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851944 | with path: O3 > Job Groups >  > openSUSE Tumbleweed AArch64 > Build20240106 > install_only@aarch64-uefi_http_boot > aarch64
 Machine:  aarch64-uefi_http_boot
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3851803 | with path: O3 > Job Groups >  > openSUSE Tumbleweed AArch64 > Build20240106 > install_only@aarch64_cpu_max > aarch64
+Machine:  aarch64_cpu_max
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -2915,6 +3311,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852540 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_controllers > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851908 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_cpuhotplug > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -2957,8 +3359,26 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852346 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_cve > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852433 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_cve_m32 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851770 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_dio > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852545 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_dio > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3005,6 +3425,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852332 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_fs > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851914 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_fs_bind > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -3031,6 +3457,12 @@ Failed Modules:
 -----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851776 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_fs_readonly > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852546 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_fs_readonly > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3113,6 +3545,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852362 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_kernel_misc > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851913 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_kernel_sched > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -3127,6 +3565,12 @@ Failed Modules:
 -----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851817 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_lvm > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852413 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_lvm > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3185,6 +3629,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852557 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_features > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851787 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_ipv6 > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -3215,8 +3665,20 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852549 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_multicast > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851808 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_nfs > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852405 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_nfs > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3311,14 +3773,32 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852369 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_stress_ipsec_sctp > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851783 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_stress_ipsec_tcp > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852347 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_stress_ipsec_tcp > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851784 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_stress_ipsec_udp > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852539 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_net_stress_ipsec_udp > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3389,6 +3869,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852528 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_openposix > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852555 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_power_management_tests > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
@@ -3403,6 +3889,12 @@ Failed Modules:
 -----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851921 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_pty > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852554 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_pty > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3437,8 +3929,20 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852331 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_syscalls > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851794 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_syscalls_debug_pagealloc > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852383 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_syscalls_debug_pagealloc > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3450,6 +3954,12 @@ Schedule:
 Failed Modules: 
 -----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3852532 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_syscalls_ipc > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852412 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > ltp_syscalls_m32 > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -3527,6 +4037,12 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852282 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > nfs_pynfs_nfs40_all > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851902 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > nfs_pynfs_nfs41_all > aarch64
 Machine:  aarch64
 YAML_SCHEDULE:  
@@ -3557,8 +4073,62 @@ YAML_SCHEDULE:  schedule/storage/supportserver.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852569 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_btrfs-btrfs-001-100 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852570 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_btrfs-btrfs-101-200 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852571 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_btrfs-btrfs-201-999 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852572 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_btrfs-generic-001-100 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3851932 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs3-generic > aarch64
+Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852584 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs3-generic > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851933 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs3-nfs > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852589 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs3-nfs > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3851934 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.0-generic > aarch64
+Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852585 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.0-generic > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3569,8 +4139,86 @@ YAML_SCHEDULE:
 Schedule:  
 Failed Modules: 
 -----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852586 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.0-nfs > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3851936 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.1-generic > aarch64
+Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852587 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.1-generic > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
 Parsed job: https://openqa.opensuse.org/tests/3851937 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.1-nfs > aarch64
 Machine:  aarch64
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852588 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_nfs4.1-nfs > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852573 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-generic-001-100 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852590 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-001-100 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852574 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-101-200 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852575 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-201-300 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852576 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-301-400 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852577 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-401-500 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852578 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-501-600 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852579 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-601-700 > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852580 | with path: O3 > Job Groups >  > openSUSE Tumbleweed Kernel > Build20240106 > xfstests_xfs-xfs-701-999 > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
@@ -3970,8 +4618,8 @@ Schedule:
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups >  > openSUSE Tumbleweed s390x  url: https://openqa.opensuse.org/group_overview/34
-ParseJobs:  O3 > Job Groups >  > openSUSE Tumbleweed s390x > Build20240105  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=20240105&groupid=34
-Parsed job: https://openqa.opensuse.org/tests/3850862 | with path: O3 > Job Groups >  > openSUSE Tumbleweed s390x > Build20240105 > autoyast_zvm > s390x
+ParseJobs:  O3 > Job Groups >  > openSUSE Tumbleweed s390x > Build20240106  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=20240106&groupid=34
+Parsed job: https://openqa.opensuse.org/tests/3853014 | with path: O3 > Job Groups >  > openSUSE Tumbleweed s390x > Build20240106 > autoyast_zvm > s390x
 Machine:  s390x-zVM-vswitch-l2
 YAML_SCHEDULE:  schedule/yast/autoyast/autoyast_zvm_sles_product_reg.yaml
 Schedule:  
@@ -5791,268 +6439,262 @@ Schedule:
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups >  > openSUSE Leap 15.5 Updates  url: https://openqa.opensuse.org/group_overview/112
-ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.5&build=20240106-2&groupid=112
-Parsed job: https://openqa.opensuse.org/tests/3850970 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > apparmor > x86_64
+ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.5&build=20240107-4&groupid=112
+Parsed job: https://openqa.opensuse.org/tests/3853374 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > apparmor > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/security/apparmor.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850934 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > autoyast_leap_videomode_text > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853338 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > autoyast_leap_videomode_text > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850935 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_gnome > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850936 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853339 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850937 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_gnome_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853340 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3853341 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_gnome_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850964 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_gnome_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853368 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_gnome_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850938 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_kde_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853342 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_kde_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850965 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_kde_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853369 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_kde_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850939 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_textmode_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853343 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_textmode_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850966 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_textmode_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853370 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_textmode_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850940 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_leap_transactional_server_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853344 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_leap_transactional_server_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update_transactional_server.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850941 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_textmode > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853345 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_textmode > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850942 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > create_hdd_transactional_server > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853346 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > create_hdd_transactional_server > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850943 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > cryptlvm > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853347 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > cryptlvm > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/encryption/cryptlvm.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850944 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_filesystem > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853348 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_filesystem > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850945 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853349 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_gnome.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850967 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_leap_update_gnome_uefi@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853371 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_leap_update_gnome_uefi@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_gnome.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850968 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_leap_update_kde_uefi@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853372 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_leap_update_kde_uefi@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_kde.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850946 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_leap_update_textmode_2 > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853350 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_leap_update_textmode_2 > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_textmode.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850947 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_misc > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853351 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_misc > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_misc.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850948 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_on_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853352 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_on_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850949 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_textmode > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  schedule/functional/extra_tests_textmode.yaml
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850950 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_textmode_docker_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853354 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_textmode_docker_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850951 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_textmode_kubectl_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853355 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_textmode_kubectl_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850952 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_textmode_podman_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853356 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_textmode_podman_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850953 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_transactional_server > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853357 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_transactional_server > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_transactional_server.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850954 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > extra_tests_webserver > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853358 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > extra_tests_webserver > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/qam/common/mau-webserver.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850955 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > gnuhealth > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853359 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > gnuhealth > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_gnuhealth.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850956 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > openqa_bootstrap > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853360 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > openqa_bootstrap > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850957 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > security_audit > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853361 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > security_audit > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/security/audit.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850958 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > textmode > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853362 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > textmode > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850959 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > toolkits > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853363 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > toolkits > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_toolkits.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850969 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > upgrade_Leap_15.4_cryptlvm@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853373 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > upgrade_Leap_15.4_cryptlvm@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850960 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > upgrade_Leap_15.4_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853364 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > upgrade_Leap_15.4_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850961 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > upgrade_Leap_15.4_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853365 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > upgrade_Leap_15.4_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850962 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > zdup-Leap-15.4-gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853366 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > zdup-Leap-15.4-gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850963 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240106-2 > zdup-Leap-15.4-kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853367 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Updates > Build20240107-4 > zdup-Leap-15.4-kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups >  > openSUSE Leap 15.5 Backports  url: https://openqa.opensuse.org/group_overview/113
-ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.5&build=%3A18254%3Aperl-File-Rename.1704450402&groupid=113
-Parsed job: https://openqa.opensuse.org/tests/3849295 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > cryptlvm > x86_64
+ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.5&build=%3A18260%3Aopusfile.1704642891&groupid=113
+Parsed job: https://openqa.opensuse.org/tests/3853200 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > cryptlvm > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  schedule/yast/opensuse/encryption/cryptlvm.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849296 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853201 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > gnome > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849301 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > gnome@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853206 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > gnome@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849297 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > install_with_updates_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853202 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > install_with_updates_gnome > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849300 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > install_with_updates_kde@uefi-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853205 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > install_with_updates_kde@uefi-2G > x86_64
 Machine:  uefi-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849298 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853203 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > kde > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3849299 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18254:perl-File-Rename.1704450402 > textmode@64bit > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853204 | with path: O3 > Job Groups >  > openSUSE Leap 15.5 Backports > Build:18260:opusfile.1704642891 > textmode@64bit > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -6553,292 +7195,292 @@ Failed Modules:
 ParseBuilds:  O3 > Job Groups >  > openSUSE Leap 15.4 Incidents  url: https://openqa.opensuse.org/group_overview/97
 ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.4 Incidents > Build:18199:gstreamer-plugins-bad.1701094309  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=%3A18199%3Agstreamer-plugins-bad.1701094309&groupid=97
 ParseBuilds:  O3 > Job Groups >  > openSUSE Leap 15.4 Updates  url: https://openqa.opensuse.org/group_overview/98
-ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240106-2&groupid=98
-Parsed job: https://openqa.opensuse.org/tests/3850908 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > apparmor > x86_64
+ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240107-1&groupid=98
+Parsed job: https://openqa.opensuse.org/tests/3852799 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > apparmor > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/security/apparmor.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850903 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > autoyast_leap_videomode_text > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852794 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > autoyast_leap_videomode_text > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850892 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_gnome > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850893 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852783 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850904 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_gnome_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852784 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_kde > x86_64
+Machine:  64bit
+YAML_SCHEDULE:  
+Schedule:  
+Failed Modules: 
+-----------------------------------
+Parsed job: https://openqa.opensuse.org/tests/3852795 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_gnome_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850898 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_gnome_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852789 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_gnome_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850905 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_kde_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852796 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_kde_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850899 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_kde_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852790 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_kde_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850906 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_textmode_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852797 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_textmode_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850900 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_textmode_uefi_autoyast@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852791 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_textmode_uefi_autoyast@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850914 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_leap_transactional_server_autoyast > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852805 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_leap_transactional_server_autoyast > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update_transactional_server.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850894 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_textmode > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852785 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_textmode > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850909 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > create_hdd_transactional_server > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852800 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > create_hdd_transactional_server > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850895 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > cryptlvm > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852786 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > cryptlvm > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/yast/opensuse/encryption/cryptlvm.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850926 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_filesystem > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852817 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_filesystem > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850927 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852818 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_gnome.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850901 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_leap_update_gnome_uefi@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852792 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_leap_update_gnome_uefi@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_gnome.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850902 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_leap_update_kde_uefi@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852793 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_leap_update_kde_uefi@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_kde.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850907 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_leap_update_textmode_2 > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852798 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_leap_update_textmode_2 > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_leap_update_textmode.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850929 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_misc > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852820 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_misc > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_misc.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850930 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_on_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852821 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_on_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850928 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_textmode > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852819 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_textmode > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_textmode.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850910 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_textmode_docker_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852801 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_textmode_docker_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850913 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_textmode_kubectl_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852804 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_textmode_kubectl_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850911 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_textmode_podman_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852802 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_textmode_podman_containers > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850915 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_transactional_server > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852806 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_transactional_server > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_transactional_server.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850933 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > extra_tests_webserver > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852824 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > extra_tests_webserver > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/qam/common/mau-webserver.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850931 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > gnuhealth > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852822 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > gnuhealth > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/extra_tests_gnuhealth.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850932 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > openqa_bootstrap > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852823 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > openqa_bootstrap > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850912 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > security_audit > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852803 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > security_audit > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/security/audit.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850896 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > textmode > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852787 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > textmode > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850924 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.2_cryptlvm@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852815 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.2_cryptlvm@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850916 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.2_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852807 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.2_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850917 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.2_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852808 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.2_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850925 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.3_cryptlvm@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852816 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.3_cryptlvm@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850918 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.3_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852809 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.3_gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850919 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > upgrade_Leap_15.3_kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852810 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > upgrade_Leap_15.3_kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850920 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > zdup-Leap-15.2-gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852811 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > zdup-Leap-15.2-gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850921 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > zdup-Leap-15.2-kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852812 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > zdup-Leap-15.2-kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850922 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > zdup-Leap-15.3-gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852813 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > zdup-Leap-15.3-gnome > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850923 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240106-2 > zdup-Leap-15.3-kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852814 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Updates > Build20240107-1 > zdup-Leap-15.3-kde > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups >  > openSUSE Leap 15.4 Backports  url: https://openqa.opensuse.org/group_overview/99
-ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240106-3&groupid=99
-Parsed job: https://openqa.opensuse.org/tests/3850980 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > cryptlvm > x86_64
+ParseJobs:  O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240107-1&groupid=99
+Parsed job: https://openqa.opensuse.org/tests/3852825 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > cryptlvm > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  schedule/yast/opensuse/encryption/cryptlvm.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850981 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852826 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > gnome > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850986 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > gnome@uefi > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852831 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > gnome@uefi > x86_64
 Machine:  uefi
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850982 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > install_with_updates_gnome > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852827 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > install_with_updates_gnome > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850985 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > install_with_updates_kde@uefi-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852830 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > install_with_updates_kde@uefi-2G > x86_64
 Machine:  uefi-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850983 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > kde > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852828 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > kde > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850984 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240106-3 > textmode@64bit > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3852829 | with path: O3 > Job Groups >  > openSUSE Leap 15.4 Backports > Build20240107-1 > textmode@64bit > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
@@ -6851,47 +7493,47 @@ ParseJobs:  O3 > Job Groups > ALP > ALP Micro > Build3.5  url: https://openqa.op
 ParseBuilds:  O3 > Job Groups > ALP > ALP Bedrock  url: https://openqa.opensuse.org/group_overview/109
 ParseJobs:  O3 > Job Groups > ALP > ALP Bedrock > Build5.1  url: https://openqa.opensuse.org/tests/overview?distri=alp&version=bedrock-0.1&build=5.1&groupid=109
 ParseBuilds:  O3 > Job Groups > ALP > openSUSE Argon  url: https://openqa.opensuse.org/group_overview/25
-ParseJobs:  O3 > Job Groups > ALP > openSUSE Argon > Build2.423  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=2.423&groupid=25
-Parsed job: https://openqa.opensuse.org/tests/3848083 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.423 > krypton-live@USBboot_64-2G > x86_64
+ParseJobs:  O3 > Job Groups > ALP > openSUSE Argon > Build2.424  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=2.424&groupid=25
+Parsed job: https://openqa.opensuse.org/tests/3853390 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.424 > krypton-live@USBboot_64-2G > x86_64
 Machine:  USBboot_64-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3848084 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.423 > krypton-live-installation > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853391 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.424 > krypton-live-installation > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3848085 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.423 > krypton-live-wayland@uefi_virtio-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853392 | with path: O3 > Job Groups > ALP > openSUSE Argon > Build2.424 > krypton-live-wayland@uefi_virtio-2G > x86_64
 Machine:  uefi_virtio-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > ALP > openSUSE Krypton  url: https://openqa.opensuse.org/group_overview/23
-ParseJobs:  O3 > Job Groups > ALP > openSUSE Krypton > Build11.11  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=11.11&groupid=23
-Parsed job: https://openqa.opensuse.org/tests/3850048 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.11 > krypton-live > x86_64
+ParseJobs:  O3 > Job Groups > ALP > openSUSE Krypton > Build11.14  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=11.14&groupid=23
+Parsed job: https://openqa.opensuse.org/tests/3853326 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.14 > krypton-live > x86_64
 Machine:  USBboot_64-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850049 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.11 > krypton-live-installation@uefi-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853327 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.14 > krypton-live-installation@uefi-2G > x86_64
 Machine:  uefi-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3850050 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.11 > krypton-live-wayland@uefi_virtio-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853328 | with path: O3 > Job Groups > ALP > openSUSE Krypton > Build11.14 > krypton-live-wayland@uefi_virtio-2G > x86_64
 Machine:  uefi_virtio-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > ALP > openSUSE GNOME Next  url: https://openqa.opensuse.org/group_overview/35
-ParseJobs:  O3 > Job Groups > ALP > openSUSE GNOME Next > Build23.1018  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=45.2&build=23.1018&groupid=35
+ParseJobs:  O3 > Job Groups > ALP > openSUSE GNOME Next > Build23.1020  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=45.2&build=23.1020&groupid=35
 ParseBuilds:  O3 > Job Groups > Others > Windows install  url: https://openqa.opensuse.org/group_overview/22
 ParseJobs:  O3 > Job Groups > Others > Windows install > 10-Build22H2  url: https://openqa.opensuse.org/tests/overview?distri=windows&version=10&build=22H2&groupid=22
 Parsed job: https://openqa.opensuse.org/tests/3806220 | with path: O3 > Job Groups > Others > Windows install > 10-Build22H2 > windows_10_uefi_unattend@uefi_win > x86_64
@@ -6901,108 +7543,30 @@ Schedule:
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > Others > Support images  url: https://openqa.opensuse.org/group_overview/107
-ParseJobs:  O3 > Job Groups > Others > Support images > Build20240106-2  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240106-2&groupid=107
-Parsed job: https://openqa.opensuse.org/tests/3850897 | with path: O3 > Job Groups > Others > Support images > Build20240106-2 > create_hdd_leap_gnome_autoyast_updated > x86_64
+ParseJobs:  O3 > Job Groups > Others > Support images > Build20240107-1  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.4&build=20240107-1&groupid=107
+Parsed job: https://openqa.opensuse.org/tests/3852788 | with path: O3 > Job Groups > Others > Support images > Build20240107-1 > create_hdd_leap_gnome_autoyast_updated > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  schedule/functional/autoyast_create_hdd/autoyast_create_hdd_leap_update.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > Others > Staging Projects  url: https://openqa.opensuse.org/group_overview/2
-ParseJobs:  O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2  url: https://openqa.opensuse.org/tests/overview?distri=microos&distri=opensuse&version=Staging%3ACore&build=Core.1378.2&groupid=2
-Parsed job: https://openqa.opensuse.org/tests/3851518 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > container-host-microos@64bit-2G-HD40G > x86_64
-Machine:  64bit-2G-HD40G
+ParseJobs:  O3 > Job Groups > Others > Staging Projects > BuildH.72.7  url: https://openqa.opensuse.org/tests/overview?distri=microos&version=Staging%3AH&build=H.72.7&groupid=2
+Parsed job: https://openqa.opensuse.org/tests/3853294 | with path: O3 > Job Groups > Others > Staging Projects > BuildH.72.7 > container-host > x86_64
+Machine:  64bit
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851515 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > microos@uefi-staging > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853319 | with path: O3 > Job Groups > Others > Staging Projects > BuildH.72.7 > container-host@uefi-staging > x86_64
 Machine:  uefi-staging
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851529 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > RAID0_gpt > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid0_gpt.yaml
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851530 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > RAID1_gpt > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  schedule/yast/opensuse/raid/raid1_gpt.yaml
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851525 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > autoyast_mini > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853320 | with path: O3 > Job Groups > Others > Staging Projects > BuildH.72.7 > microos > x86_64
 Machine:  64bit
 YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851517 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > create_hdd_gnome-staging > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851526 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > cryptlvm > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851519 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > gnome > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851520 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > kde > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851523 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > kde_usbboot@USBboot_64 > x86_64
-Machine:  USBboot_64
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851521 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > minimalx > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851524 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > minimalx@uefi-staging > x86_64
-Machine:  uefi-staging
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851527 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > rescue_system > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851516 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > textmode > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851528 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > upgrade_staging > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3851522 | with path: O3 > Job Groups > Others > Staging Projects > BuildCore.1378.2 > yast2_users-staging > x86_64
-Machine:  64bit
-YAML_SCHEDULE:  schedule/security/yast2_users.yaml
 Schedule:  
 Failed Modules: 
 -----------------------------------
@@ -7098,35 +7662,35 @@ ParseJobs:  O3 > Job Groups > old > openSUSE Leap 42.1 > Build0265  url: https:/
 ParseBuilds:  O3 > Job Groups > old > SLES 12 SP3 PowerPC  url: https://openqa.opensuse.org/group_overview/86
 ParseBuilds:  O3 > Job Groups > old > SLES 15 PowerPC  url: https://openqa.opensuse.org/group_overview/87
 ParseBuilds:  O3 > Job Groups > old > openQA  url: https://openqa.opensuse.org/group_overview/24
-ParseJobs:  O3 > Job Groups > old > openQA > Build:TW.25642  url: https://openqa.opensuse.org/tests/overview?distri=openqa&version=Tumbleweed&build=%3ATW.25642&groupid=24
-Parsed job: https://openqa.opensuse.org/tests/3852732 | with path: O3 > Job Groups > old > openQA > Build:TW.25642 > openqa_from_bootstrap > x86_64
+ParseJobs:  O3 > Job Groups > old > openQA > Build:TW.25665  url: https://openqa.opensuse.org/tests/overview?distri=openqa&version=Tumbleweed&build=%3ATW.25665&groupid=24
+Parsed job: https://openqa.opensuse.org/tests/3853395 | with path: O3 > Job Groups > old > openQA > Build:TW.25665 > openqa_from_bootstrap > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852733 | with path: O3 > Job Groups > old > openQA > Build:TW.25642 > openqa_from_containers > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853396 | with path: O3 > Job Groups > old > openQA > Build:TW.25665 > openqa_from_containers > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852734 | with path: O3 > Job Groups > old > openQA > Build:TW.25642 > openqa_from_git > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853397 | with path: O3 > Job Groups > old > openQA > Build:TW.25665 > openqa_from_git > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852735 | with path: O3 > Job Groups > old > openQA > Build:TW.25642 > openqa_install+publish > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853398 | with path: O3 > Job Groups > old > openQA > Build:TW.25665 > openqa_install+publish > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/3852736 | with path: O3 > Job Groups > old > openQA > Build:TW.25642 > openqa_install_nginx > x86_64
+Parsed job: https://openqa.opensuse.org/tests/3853399 | with path: O3 > Job Groups > old > openQA > Build:TW.25665 > openqa_install_nginx > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Scraping O3 took 11m27.698720528s
+Scraping O3 took 11m14.111267854s
