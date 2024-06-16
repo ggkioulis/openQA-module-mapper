@@ -7035,40 +7035,40 @@ Schedule:
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > Desktop Environments - Development > openSUSE Argon  url: https://openqa.opensuse.org/group_overview/25
-ParseJobs:  O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build3.118  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.5&build=3.118&groupid=25
-Parsed job: https://openqa.opensuse.org/tests/4272928 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build3.118 > krypton-live@USBboot_64-2G > x86_64
+ParseJobs:  O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build2.1  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=15.6&build=2.1&groupid=25
+Parsed job: https://openqa.opensuse.org/tests/4274274 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build2.1 > krypton-live@USBboot_64-2G > x86_64
 Machine:  USBboot_64-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4272929 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build3.118 > krypton-live-installation > x86_64
+Parsed job: https://openqa.opensuse.org/tests/4274275 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build2.1 > krypton-live-installation > x86_64
 Machine:  64bit-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4272930 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build3.118 > krypton-live-wayland@uefi_virtio-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/4274276 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Argon > Build2.1 > krypton-live-wayland@uefi_virtio-2G > x86_64
 Machine:  uefi_virtio-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
 ParseBuilds:  O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton  url: https://openqa.opensuse.org/group_overview/23
-ParseJobs:  O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.10  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=13.10&groupid=23
-Parsed job: https://openqa.opensuse.org/tests/4272931 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.10 > krypton-live > x86_64
+ParseJobs:  O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.15  url: https://openqa.opensuse.org/tests/overview?distri=opensuse&version=Tumbleweed&build=13.15&groupid=23
+Parsed job: https://openqa.opensuse.org/tests/4274277 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.15 > krypton-live > x86_64
 Machine:  USBboot_64-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4272932 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.10 > krypton-live-installation@uefi-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/4274278 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.15 > krypton-live-installation@uefi-2G > x86_64
 Machine:  uefi-2G
 YAML_SCHEDULE:  
 Schedule:  
 Failed Modules: 
 -----------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4272933 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.10 > krypton-live-wayland@uefi_virtio-2G > x86_64
+Parsed job: https://openqa.opensuse.org/tests/4274279 | with path: O3 > Job Groups > Desktop Environments - Development > openSUSE Krypton > Build13.15 > krypton-live-wayland@uefi_virtio-2G > x86_64
 Machine:  uefi_virtio-2G
 YAML_SCHEDULE:  
 Schedule:  
@@ -7627,41 +7627,5 @@ ParseJobs:  O3 > Job Groups > old > openSUSE Leap 42.1 > Build0265  url: https:/
 ParseBuilds:  O3 > Job Groups > old > SLES 12 SP3 PowerPC  url: https://openqa.opensuse.org/group_overview/86
 ParseBuilds:  O3 > Job Groups > old > SLES 15 PowerPC  url: https://openqa.opensuse.org/group_overview/87
 ParseBuilds:  O3 > Job Groups > old > openQA  url: https://openqa.opensuse.org/group_overview/24
-ParseJobs:  O3 > Job Groups > old > openQA > Build:TW.29244  url: https://openqa.opensuse.org/tests/overview?distri=openqa&version=Tumbleweed&build=%3ATW.29244&groupid=24
-Parsed job: https://openqa.opensuse.org/tests/4274109 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_from_bootstrap > x86_64
-Machine:  64bit-2G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4274110 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_from_containers > x86_64
-Machine:  64bit-2G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4274111 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_from_git > x86_64
-Machine:  64bit-2G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4274112 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_install+publish > x86_64
-Machine:  64bit-2G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4274113 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_install_multimachine@64bit-4G > x86_64
-Machine:  64bit-4G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Parsed job: https://openqa.opensuse.org/tests/4274114 | with path: O3 > Job Groups > old > openQA > Build:TW.29244 > openqa_install_nginx > x86_64
-Machine:  64bit-2G
-YAML_SCHEDULE:  
-Schedule:  
-Failed Modules: 
------------------------------------
-Scraping O3 took 9m53.666368614s
+ParseJobs:  O3 > Job Groups > old > openQA > Build:TW.full.365  url: https://openqa.opensuse.org/tests/overview?distri=openqa&version=Tumbleweed&build=%3ATW.full.365&groupid=24
+Scraping O3 took 40m41.306269013s
